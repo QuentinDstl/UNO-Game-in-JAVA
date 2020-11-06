@@ -3,13 +3,22 @@ package uno_desautel_pellen_perold;
 public class ReverseCard implements Card {
 
     @Override
-    public boolean testUseCard() {
+    public char getColor() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getSymbol() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean canPlayOn(Card card) {
         return false;
     }
 
     @Override
-    public void useCard() {
+    public void play(Game g) {
         
     }
-    
 }
