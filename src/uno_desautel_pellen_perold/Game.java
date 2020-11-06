@@ -10,7 +10,7 @@ public class Game {
     private ArrayList<Card> m_trash;      //trash of cards played
     
     
-    ///CONSTRUCTOR
+    /* CONSTRUCTOR */
     public Game()
     {
         
@@ -18,7 +18,7 @@ public class Game {
         m_trash = new ArrayList<>();
     }
     
-    ///INITIALISATION METHODS
+    /* INITIALISATION METHODS */
     public void initPickCards()
     {
         initNumberCards();
@@ -27,24 +27,25 @@ public class Game {
     
     public void initNumberCards()
     {
-        initNumberColorCards("blue");
-        initNumberColorCards("red");
-        initNumberColorCards("yellow");
-        initNumberColorCards("green");
+        initNumberColorCards(Card.BLUE_CARD);
+        initNumberColorCards(Card.RED_CARD);
+        initNumberColorCards(Card.YELLOW_CARD);
+        initNumberColorCards(Card.GREEN_CARD);
     }
     
-    public void initNumberColorCards(String color)
+    public void initNumberColorCards(char color)
     {
-        m_pick_cards.add( new NumberCard(0, color));
-        for(int j=0; j<Card.NB_COLOR_CARDS_EXCEPT_0; ++j)
+        m_pick_cards.add( new NumberCard(color, 0));
+        for(int j=0; j<Card.NB_COLOR_CARDS_EXCEPT_0/2; ++j)
         {
-            m_pick_cards.add( new NumberCard(j+1, color));   //creation of cards from 1 to 9
+            m_pick_cards.add( new NumberCard(color, j+1));   //creation of cards from 1 to 9
+            m_pick_cards.add( new NumberCard(color, j+1));   //2 cards with same symbol
         }
         
     }
     
     
-    ///SHUFFLE OF LIST METHOD
+    /* SHUFFLE OF LIST METHOD */
     public ArrayList<Card> shufflePickCards(ArrayList<Card> pick_cards)
     {
         Random randomGenerator = new Random();  //declaration of an aleatory object
@@ -69,4 +70,37 @@ public class Game {
         
         return pick_cards;
     }
+    
+    
+    /* Getters */
+    public ArrayList<Card> getPickCards()
+    {
+        return m_pick_cards;
+    }
+    
+    public int getSizePickCards()
+    {
+        return m_pick_cards.size();
+    }
+    
+    public Card getCard(int indice)
+    {
+        return m_pick_cards.get(indice);
+    }
+    
+    public ArrayList<Card> getTrash()
+    {
+        return m_trash;
+    }
+    
+    public int getSizeTrash()
+    {
+        return m_trash.size();
+    }
+    
+    public Card getCardTrash(int indice)
+    {
+        return m_trash.get(indice);
+    }
+            
 }
