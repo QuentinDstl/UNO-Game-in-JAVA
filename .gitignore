@@ -1,3 +1,6 @@
+#We are not working on same version with my friends (8.0.2 != 8.2rc)
+build.properties
+
 # Compiled class file
 *.class
 

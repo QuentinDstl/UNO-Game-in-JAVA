@@ -1,5 +1,15 @@
 package uno_desautel_pellen_perold;
 
-public class DrawCard {
+public class DrawCard implements Card {
+
+    @Override
+    public boolean testUseCard() {
+        
+    }
+
+    @Override
+    public void useCard() {
+        
+    }
     
 }
