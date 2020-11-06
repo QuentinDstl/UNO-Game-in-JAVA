@@ -4,7 +4,7 @@ public class DrawCard implements Card {
 
     @Override
     public boolean testUseCard() {
-        
+        return false;
     }
 
     @Override

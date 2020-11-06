@@ -4,7 +4,7 @@ public class WildDrawCard implements Card {
 
     @Override
     public boolean testUseCard() {
-        
+        return false;
     }
 
     @Override
