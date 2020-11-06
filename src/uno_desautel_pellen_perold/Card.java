@@ -10,6 +10,14 @@ public interface Card {
     public final static int SKIP_CARD = -3;
     public final static int WILD_CARD = -4;
     public final static int WILD_DRAW_CARD = -5;
+    
+    /* CARD COLOR */
+    public final static char BLUE_CARD = 'B';
+    public final static char RED_CARD = 'R';
+    public final static char GREEN_CARD = 'G';
+    public final static char YELLOW_CARD = 'Y';
+    public final static char ALL_COLORS_CARD = 'S';
+    
 
     public char getColor();                 // get the colour 
 

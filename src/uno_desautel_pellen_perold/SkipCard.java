@@ -2,14 +2,20 @@ package uno_desautel_pellen_perold;
 
 public class SkipCard implements Card {
 
+    private char m_color;
+    
+    public SkipCard(char color) {
+        m_color = color;
+    }
+    
     @Override
     public char getColor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return m_color;
     }
 
     @Override
     public int getSymbol() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return SKIP_CARD;
     }
 
     @Override

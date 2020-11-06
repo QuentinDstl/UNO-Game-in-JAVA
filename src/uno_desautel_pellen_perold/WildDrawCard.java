@@ -2,14 +2,20 @@ package uno_desautel_pellen_perold;
 
 public class WildDrawCard implements Card {
 
+    private char m_color;
+    
+    public WildDrawCard () {
+        m_color =ALL_COLORS_CARD;
+    }
+    
     @Override
     public char getColor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return m_color;
     }
 
     @Override
     public int getSymbol() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return WILD_DRAW_CARD;
     }
 
     @Override
@@ -19,6 +25,8 @@ public class WildDrawCard implements Card {
 
     @Override
     public void play(Game g) {
-        
+        //TODO faire ici le choix de la couleur de la nouvelle carte
+        m_color = 'B';
+        // change color of the card
     }
 }

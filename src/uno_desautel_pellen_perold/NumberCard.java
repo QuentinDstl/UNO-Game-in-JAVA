@@ -2,8 +2,14 @@ package uno_desautel_pellen_perold;
 
 public class NumberCard implements Card {
 
-    private char m_color;                           // couleur ='R': red |'G': green |'Y': yellow |'B': blue |'S': Black : elle peut etre placé partout et prend une couleur|
+    private char m_color;
     private int m_number;
+    
+    public NumberCard (char color, int number){
+        //TODO faire les blindages ici de color et number
+        m_color = color;
+        m_number = number;
+    }
     
     @Override
     public char getColor() {
@@ -24,12 +30,16 @@ public class NumberCard implements Card {
     public boolean canPlayOn(Card card) {
         if(this.m_color == card.getColor())
             return true;
-        else if (this.m_color == 'S')
+        else if (this.m_color == ALL_COLORS_CARD)
             return true;
         else 
             return this.m_number == card.getSymbol();                   // if statement redondant : si this.m_number == card.getSymbol() alors return true sinon false
     }
 
+    /**
+     * jouer la carte en question
+     * @param g
+     */
     @Override
     public void play(Game g) {
 
