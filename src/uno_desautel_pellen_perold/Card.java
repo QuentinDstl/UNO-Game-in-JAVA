@@ -14,6 +14,25 @@ public interface Card {
     public final static int NB_EACH_COLOR_0 = 1;
     
     
+    /* SKIP CARDS */
+    public final static int NB_SKIP_CARDS = 8;
+    public final static int NB_EACH_COLOR_SKIP_CARD = 2;
+    
+    /* REVERSE CARDS */
+    public final static int NB_REVERSE_CARDS = 8;
+    public final static int NB_EACH_COLOR_REVERSE_CARD = 2;
+    
+    /* WILD CARDS */
+    public final static int NB_WILD_CARDS = 8;
+    public final static int NB_EACH_COLOR_WILD_CARD = 2;
+    
+    /* DRAW CARDS */
+    public final static int NB_DRAW_CARDS = 4;
+    
+    /* WILD DRAW CARDS */
+    public final static int NB_WILD_DRAW_CARDS = 4;
+    
+    
     /* CARD TYPE */
     public final static int REVERSE_CARD = -1;
     public final static int DRAW_CARD = -2;

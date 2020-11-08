@@ -22,6 +22,11 @@ public class Game {
     public void initPickCards()
     {
         initNumberCards();
+        initSkipCards();
+        initReverseCards();
+        initWildCards();
+        initDrawCards();
+        initWildDrawCards();
         m_pick_cards = shufflePickCards(m_pick_cards);
     }
     
@@ -44,6 +49,64 @@ public class Game {
         
     }
     
+    public void initSkipCards()
+    {
+        initSkipColorCards(Card.BLUE_CARD);
+        initSkipColorCards(Card.RED_CARD);
+        initSkipColorCards(Card.YELLOW_CARD);
+        initSkipColorCards(Card.GREEN_CARD);
+    }
+    
+    public void initSkipColorCards(char color)
+    {
+        m_pick_cards.add( new SkipCard(color));
+        m_pick_cards.add( new SkipCard(color));
+    }
+    
+    public void initReverseCards()
+    {
+        initReverseColorCards(Card.BLUE_CARD);
+        initReverseColorCards(Card.RED_CARD);
+        initReverseColorCards(Card.YELLOW_CARD);
+        initReverseColorCards(Card.GREEN_CARD);
+    }
+    
+    public void initReverseColorCards(char color)
+    {
+        m_pick_cards.add( new ReverseCard(color));
+        m_pick_cards.add( new ReverseCard(color));
+    }
+    
+    public void initWildCards()
+    {
+        initWildColorCards(Card.BLUE_CARD);
+        initWildColorCards(Card.RED_CARD);
+        initWildColorCards(Card.YELLOW_CARD);
+        initWildColorCards(Card.GREEN_CARD);
+    }
+    
+    public void initWildColorCards(char color)
+    {
+        m_pick_cards.add( new WildCard(color));
+        m_pick_cards.add( new WildCard(color));
+    }
+    
+    public void initDrawCards()
+    {
+        for(int i=0; i<Card.NB_DRAW_CARDS; ++i)
+        {
+            m_pick_cards.add( new DrawCard());
+        }
+    }
+    
+    public void initWildDrawCards()
+    {
+        for(int i=0; i<Card.NB_WILD_DRAW_CARDS; ++i)
+        {
+            m_pick_cards.add( new WildDrawCard());
+        }
+    }
+    
     
     /* SHUFFLE OF LIST METHOD */
     public ArrayList<Card> shufflePickCards(ArrayList<Card> pick_cards)
@@ -57,11 +120,11 @@ public class Game {
             tab[i] = false;
         }
         
-        for(int i=0; i<Card.NB_NUMBER_CARDS; ++i)
+        for(int i=0; i<Card.NB_TOTAL_CARDS; ++i)
         {
             do 
             {
-                randomInt = randomGenerator.nextInt(Card.NB_NUMBER_CARDS);
+                randomInt = randomGenerator.nextInt(Card.NB_TOTAL_CARDS);
             }while(tab[randomInt]!=false);
             
             Collections.swap(pick_cards, i, randomInt); //aleatory swap
