@@ -31,6 +31,7 @@ public class WildCard implements Card {
         return WILD_CARD;
     }
     
+    @Override
     public ImageIcon getImage() {
         return m_image;
     }

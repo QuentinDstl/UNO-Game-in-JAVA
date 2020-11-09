@@ -31,6 +31,7 @@ public class ReverseCard implements Card {
         return REVERSE_CARD;
     }
     
+    @Override
     public ImageIcon getImage() {
         return m_image;
     }

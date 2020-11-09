@@ -36,6 +36,7 @@ public class NumberCard implements Card {
         return m_number;
     }
     
+    @Override
     public ImageIcon getImage() {
         return m_image;
     }

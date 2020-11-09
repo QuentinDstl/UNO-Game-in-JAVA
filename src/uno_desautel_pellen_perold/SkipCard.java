@@ -31,6 +31,7 @@ public class SkipCard implements Card {
         return SKIP_CARD;
     }
     
+    @Override
     public ImageIcon getImage() {
         return m_image;
     }

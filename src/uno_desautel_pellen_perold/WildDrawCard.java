@@ -31,6 +31,7 @@ public class WildDrawCard implements Card {
         return WILD_DRAW_CARD;
     }
     
+    @Override
     public ImageIcon getImage() {
         return m_image;
     }

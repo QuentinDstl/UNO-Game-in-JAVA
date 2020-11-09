@@ -31,6 +31,7 @@ public class DrawCard implements Card {
         return DRAW_CARD;
     }
     
+    @Override
     public ImageIcon getImage() {
         return m_image;
     }

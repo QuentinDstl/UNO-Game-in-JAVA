@@ -6,7 +6,7 @@ public interface Card {
 
     public final static int NB_TOTAL_CARDS = 108;
     
-    public static final int NB_COlOR = 4;
+    public final static int NB_COLOR = 4;
     
     /* NUMBER CARDS */
     public final static int NB_NUMBER_CARDS = 68;
