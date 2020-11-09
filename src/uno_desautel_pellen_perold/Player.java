@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Player {
 
     private ArrayList <Card> m_deck;
-    public static final int NUMBER_OF_CARD = 6;
+    public static final int NUMBER_OF_CARD = 7;
     
     public Player() {
         m_deck = new ArrayList<>();

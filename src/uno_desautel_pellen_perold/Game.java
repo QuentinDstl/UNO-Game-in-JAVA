@@ -10,6 +10,7 @@ public class Game {
     private ArrayList<Card> m_trash;      //trash of cards played
     private int m_playTurn;
     private ArrayList<Player> m_players;
+    private boolean m_order;
     
     /* CONSTRUCTOR */
     public Game() {
@@ -18,6 +19,7 @@ public class Game {
         m_trash = new ArrayList<>();
         m_players = new ArrayList<>();
         m_playTurn = 0;
+        m_order = true;
     }
     
     /* INITIALISATION METHODS */
@@ -45,7 +47,6 @@ public class Game {
             m_pick_cards.add( new NumberCard(color, j+1));   //creation of cards from 1 to 9
             m_pick_cards.add( new NumberCard(color, j+1));   //2 cards with same symbol
         }
-        
     }
     
     public void initSkipCards() {
@@ -85,15 +86,13 @@ public class Game {
     }
     
     public void initDrawCards() {
-        for(int i=0; i<Card.NB_DRAW_CARDS; ++i)
-        {
+        for(int i=0; i<Card.NB_DRAW_CARDS; ++i) {
             m_pick_cards.add( new DrawCard());
         }
     }
     
     public void initWildDrawCards() {
-        for(int i=0; i<Card.NB_WILD_DRAW_CARDS; ++i)
-        {
+        for(int i=0; i<Card.NB_WILD_DRAW_CARDS; ++i) {
             m_pick_cards.add( new WildDrawCard());
         }
     }
@@ -109,14 +108,30 @@ public class Game {
             m_players.add(player);
         }
     }
-    
-    
-    
-    private void next() {
-        if(m_playTurn == m_players.size())
-            m_playTurn = 0;
-        else
+
+    public void next() {
+        if(m_order == true) {
             m_playTurn++;
+            if(m_playTurn == m_players.size())
+                m_playTurn = 0;
+        }
+
+        else {
+            m_playTurn--;
+            if(m_playTurn == -1)
+                m_playTurn = m_players.size()-1;
+        }
+    }
+    
+    public void switchOrder() {
+        m_order = !m_order;
+    }
+    
+    public void play(int pos) {
+        Card card  = m_players.get(m_playTurn).play(pos);
+        card.play(this);
+        m_trash.add(card);
+        this.next();
     }
     
     /* SHUFFLE OF LIST METHOD */
@@ -165,5 +180,20 @@ public class Game {
     
     public Card getCardTrash(int indice) {
         return m_trash.get(indice);
-    }       
+    }
+    
+    public ArrayList <Card> getPlayerDeck(int i) {
+        ArrayList <Card> deck = null;
+        
+        try {
+            deck = m_players.get(i).getDeck();
+        }
+        catch(IllegalArgumentException e) {
+            System.out.println("Exception : " + e.getMessage());
+        }
+        catch(Exception e) {
+            System.out.println("Exception : " + e.getMessage());
+        }
+        return deck;
+    }
 }

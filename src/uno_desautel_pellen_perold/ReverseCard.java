@@ -20,11 +20,14 @@ public class ReverseCard implements Card {
 
     @Override
     public boolean canPlayOn(Card card) {
-        return false;
+        if(this.m_color == card.getColor())
+            return true;
+        else 
+            return  card.getSymbol() == REVERSE_CARD;                   // if statement redondant : si REVERSE_CARD == card.getSymbol() alors return true sinon false
     }
 
     @Override
     public void play(Game g) {
-        
+        g.switchOrder();
     }
 }

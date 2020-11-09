@@ -20,11 +20,14 @@ public class SkipCard implements Card {
 
     @Override
     public boolean canPlayOn(Card card) {
-        return false;
+        if(this.m_color == card.getColor())
+            return true;
+        else 
+            return  card.getSymbol() == SKIP_CARD;
     }
 
     @Override
     public void play(Game g) {
-        
+        g.next();
     }
 }
