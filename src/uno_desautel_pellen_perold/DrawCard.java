@@ -1,11 +1,23 @@
 package uno_desautel_pellen_perold;
 
+import javax.swing.ImageIcon;
+
 public class DrawCard implements Card {
 
     private char m_color;
+    private ImageIcon m_image;
     
     public DrawCard() {
        m_color = ALL_COLORS_CARD;
+       m_image = initImageDrawCard();
+              
+    }
+    
+    public ImageIcon initImageDrawCard() {
+        ImageIcon image_card = null;
+        String file_name = "CartesUNO\\draw.jpg";
+        image_card = new ImageIcon(file_name);
+        return image_card;
     }
     
     @Override
@@ -16,6 +28,10 @@ public class DrawCard implements Card {
     @Override
     public int getSymbol() {
         return DRAW_CARD;
+    }
+    
+    public ImageIcon getImage() {
+        return m_image;
     }
 
     @Override

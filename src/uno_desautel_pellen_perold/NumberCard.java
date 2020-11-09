@@ -1,15 +1,28 @@
 package uno_desautel_pellen_perold;
 
+import javax.swing.ImageIcon;
+
 public class NumberCard implements Card {
 
     private char m_color;
     private int m_number;
+    private ImageIcon m_image;
     
     public NumberCard (char color, int number){
         //TODO faire les blindages ici de color et number
         m_color = color;
         m_number = number;
+        m_image = initImageNumberCard(m_color, m_number);
     }
+    
+    
+    public ImageIcon initImageNumberCard(char color, int number) {
+        ImageIcon image_card = null;
+        String file_name = "CarteUNO\\" +number +color +".jpg";
+        image_card = new ImageIcon(file_name);
+        return image_card;
+    }
+      
     
     @Override
     public char getColor() {
@@ -19,6 +32,10 @@ public class NumberCard implements Card {
     @Override
     public int getSymbol() {
         return m_number;
+    }
+    
+    public ImageIcon getImage() {
+        return m_image;
     }
 
     /**

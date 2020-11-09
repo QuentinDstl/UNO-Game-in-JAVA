@@ -1,11 +1,22 @@
 package uno_desautel_pellen_perold;
 
+import javax.swing.ImageIcon;
+
 public class WildCard implements Card {
 
     private char m_color;
+    private ImageIcon m_image;
     
     public WildCard (char color) {
         m_color = color;
+        m_image = initImageWildCard(color);
+    }
+    
+    public ImageIcon initImageWildCard(char color) {
+        ImageIcon image_card = null;
+        String file_name = "CarteUNO\\wild" +color +".jpg";
+        image_card = new ImageIcon(file_name);
+        return image_card;
     }
     
     @Override
@@ -16,6 +27,10 @@ public class WildCard implements Card {
     @Override
     public int getSymbol() {
         return WILD_CARD;
+    }
+    
+    public ImageIcon getImage() {
+        return m_image;
     }
 
     @Override
