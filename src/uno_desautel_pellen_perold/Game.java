@@ -108,6 +108,12 @@ public class Game {
             m_players.add(player);
         }
     }
+    
+    public void initTrash()
+    {
+        m_trash.add(m_pick_cards.get(m_pick_cards.size()-1));
+        m_pick_cards.remove(m_pick_cards.size()-1);
+    }
 
     public void next() {
         if(m_order == true) {

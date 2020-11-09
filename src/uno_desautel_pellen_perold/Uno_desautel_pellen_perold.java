@@ -14,6 +14,7 @@ public class Uno_desautel_pellen_perold {
         
         game.initPickCards();
         game.initPlayers(numberPlayers);
+        game.initTrash();
     }
     
     public static int playWelcome()
