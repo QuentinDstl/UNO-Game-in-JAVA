@@ -6,11 +6,14 @@ public class Uno_desautel_pellen_perold {
     {
         /* initialisation og game */
         Game game = new Game();
+        int numberPlayers  = playWelcome();
+        
+        game.initPlayers(numberPlayers);
         game.initPickCards();
         
     }
     
-    public static void playWelcome()
+    public static int playWelcome()
     {
         int numberPlayer=0;
         GraphicWelcome displayOne = new GraphicWelcome();
@@ -23,12 +26,12 @@ public class Uno_desautel_pellen_perold {
         
         // A DELETE PLUS TARD 
         System.out.println(" NUmbers players : "  +numberPlayer);
+        
+        return numberPlayer;
     }
     
     public static void main(String[] args) 
-    {
-        playWelcome();
-        
+    {   
         playGame();
     }
     

@@ -11,8 +11,6 @@ public class Game {
     private int m_playTurn;
     private ArrayList<Player> m_players;
     
-    
-    
     /* CONSTRUCTOR */
     public Game() {
         
