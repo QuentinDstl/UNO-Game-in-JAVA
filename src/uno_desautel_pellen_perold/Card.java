@@ -28,7 +28,7 @@ public interface Card {
     
     /* DRAW CARDS */
     public final static int NB_DRAW_CARDS = 4;
-    
+
     /* WILD DRAW CARDS */
     public final static int NB_WILD_DRAW_CARDS = 4;
     

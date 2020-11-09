@@ -30,8 +30,6 @@ public class NumberCard implements Card {
     public boolean canPlayOn(Card card) {
         if(this.m_color == card.getColor())
             return true;
-        else if (this.m_color == ALL_COLORS_CARD)
-            return true;
         else 
             return this.m_number == card.getSymbol();                   // if statement redondant : si this.m_number == card.getSymbol() alors return true sinon false
     }
@@ -42,7 +40,7 @@ public class NumberCard implements Card {
      */
     @Override
     public void play(Game g) {
-
+        //g.getPlayer();
     }
 
 }
