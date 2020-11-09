@@ -174,6 +174,10 @@ public class Game {
         return m_trash;
     }
     
+    public ArrayList<Player> getPlayers() {
+            return m_players;
+    }
+    
     public int getSizeTrash() {
         return m_trash.size();
     }
@@ -195,5 +199,15 @@ public class Game {
             System.out.println("Exception : " + e.getMessage());
         }
         return deck;
+    }
+    
+    public void startGame()
+    {
+        int length = m_trash.size();
+        for (int i=0; i < m_players.size(); i++)
+        {
+            if (length ==0)
+                new GraphicInterface(m_players.get(i), i+1);
+        }
     }
 }
