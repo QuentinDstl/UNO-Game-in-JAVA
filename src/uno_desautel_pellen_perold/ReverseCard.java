@@ -14,7 +14,9 @@ public class ReverseCard implements Card {
     
     public ImageIcon initImageReverseCard(char color) {
         ImageIcon image_card = null;
-        String file_name = "CarteUNO\\reverse" +color +".jpg";
+        String file_name = "CarteUNO\\";
+        file_name = file_name + "\\reverse";
+        file_name = file_name + color + ".jpg";
         image_card = new ImageIcon(file_name);
         return image_card;
     }

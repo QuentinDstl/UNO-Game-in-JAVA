@@ -24,7 +24,7 @@ public class GraphicInterface extends JFrame
         setLayout(new GridLayout(2, hey.getDeck().size()));
         
         /*Insertion of the pickCard */
-        JButton buttonPickCard = new JButton(new ImageIcon("Cartes UNO\\doscarte.jpg"));
+        JButton buttonPickCard = new JButton(new ImageIcon("CarteUNO\\doscarte.jpg"));
         buttonPickCard.addActionListener(new PlayPickCardListener());
         JPanel panelPickCard = new JPanel();
         panelPickCard.add(buttonPickCard);
@@ -41,7 +41,9 @@ public class GraphicInterface extends JFrame
         /* Insertion of the deck of the player */
         for (int i = 0; i<hey.getDeck().size(); i++ ) {
             String t = String.valueOf(i);
-            JButton button = new JButton(t,new ImageIcon("Cartes UNO\\" +i+ "rouge.jpg"));
+            
+            System.out.println(hey.getDeck().get(i).getImage());
+            JButton button = new JButton(t,hey.getDeck().get(i).getImage());
             button.addActionListener(new PlayCardListener());          
             
             JPanel panel = new JPanel();

@@ -14,7 +14,9 @@ public class SkipCard implements Card {
     
     public ImageIcon initImageSkipCard(char color) {
         ImageIcon image_card = null;
-        String file_name = "CarteUNO\\skip" +color +".jpg";
+        String file_name = "CarteUNO\\";
+        file_name = file_name + "\\skip";
+        file_name = file_name + color + ".jpg";
         image_card = new ImageIcon(file_name);
         return image_card;
     }

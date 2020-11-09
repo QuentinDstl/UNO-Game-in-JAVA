@@ -14,7 +14,9 @@ public class WildCard implements Card {
     
     public ImageIcon initImageWildCard(char color) {
         ImageIcon image_card = null;
-        String file_name = "CarteUNO\\wild" +color +".jpg";
+        String file_name = "CarteUNO\\";
+        file_name = file_name + "\\wild";
+        file_name = file_name + color + ".jpg";
         image_card = new ImageIcon(file_name);
         return image_card;
     }
