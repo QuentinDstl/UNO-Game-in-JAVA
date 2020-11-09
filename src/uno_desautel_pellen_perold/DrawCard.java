@@ -15,7 +15,8 @@ public class DrawCard implements Card {
     
     public ImageIcon initImageDrawCard() {
         ImageIcon image_card = null;
-        String file_name = "CartesUNO\\draw.jpg";
+        String file_name = "CarteUNO\\";
+        file_name = file_name + "\\draw.jpg";
         image_card = new ImageIcon(file_name);
         return image_card;
     }

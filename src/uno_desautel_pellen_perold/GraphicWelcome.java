@@ -65,6 +65,8 @@ public class GraphicWelcome extends JFrame
          input = kiloTextField.getText();
 
          numberPlayer = Integer.parseInt(input);
+         
+         setVisible(false);
       }
     }
 

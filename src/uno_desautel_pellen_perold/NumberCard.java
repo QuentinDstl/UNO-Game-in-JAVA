@@ -18,7 +18,9 @@ public class NumberCard implements Card {
     
     public ImageIcon initImageNumberCard(char color, int number) {
         ImageIcon image_card = null;
-        String file_name = "CarteUNO\\" +number +color +".jpg";
+        String file_name = "CarteUNO\\";
+        file_name = file_name + "\\";
+        file_name = file_name + number + color + ".jpg";
         image_card = new ImageIcon(file_name);
         return image_card;
     }
