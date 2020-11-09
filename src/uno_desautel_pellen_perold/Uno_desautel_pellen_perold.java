@@ -22,7 +22,6 @@ public class Uno_desautel_pellen_perold {
         game.initTrash();
         
         game.startGame();
-
  
     }
     

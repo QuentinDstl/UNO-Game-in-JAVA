@@ -212,8 +212,7 @@ public class Game {
         int length = m_trash.size();
         for (int i=0; i < m_players.size(); i++)
         {
-            if (length ==0)
-                new GraphicInterface(m_players.get(i), i+1);
+            new GraphicInterface(m_players.get(i), i+1);
         }
     }
 }
