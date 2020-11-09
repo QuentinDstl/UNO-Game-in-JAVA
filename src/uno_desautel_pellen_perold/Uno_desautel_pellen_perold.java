@@ -34,7 +34,7 @@ public class Uno_desautel_pellen_perold {
         {            
             numberPlayer = displayOne.getNumberPlayer();
             System.out.print("");
-        } while (numberPlayer ==0);
+        }while (numberPlayer ==0);
         
         // A DELETE PLUS TARD 
         System.out.println(" Numbers players : "  +numberPlayer);

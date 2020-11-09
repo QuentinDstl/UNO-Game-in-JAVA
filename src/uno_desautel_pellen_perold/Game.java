@@ -137,6 +137,7 @@ public class Game {
         Card card  = m_players.get(m_playTurn).play(pos);
         card.play(this);
         m_trash.add(card);
+        System.out.println("SALUT'");
         this.next();
     }
     
@@ -209,10 +210,13 @@ public class Game {
     
     public void startGame()
     {
-        int length = m_trash.size();
-        for (int i=0; i < m_players.size(); i++)
+        int test =0;
+        
+        do
         {
-            new GraphicInterface(m_players.get(i), i+1);
-        }
+            GraphicInterface displayTwo = new GraphicInterface();
+
+            displayTwo.startGamenterface(this);
+        }while(test ==0);
     }
 }

@@ -10,10 +10,33 @@ public class GraphicInterface extends JFrame
 {
     private final int WINDOW_WIDTH = 2000;   // Window width
     private final int WINDOW_HEIGHT = 1000;  // Window height
+    protected int m_pickCard = -10;
 
-   public GraphicInterface(Player hey, int place)
+   public GraphicInterface()
    {
-        ArrayList<JPanel> tabJPanel= new ArrayList<JPanel>();
+        
+   }
+   public void startGamenterface(Game game)
+   {
+       int length = game.getTrash().size();
+       int pickCardNew = 0;
+
+       for (int i=0; i < game.getPlayers().size(); i++)
+       {
+            startPlayerInterface(game.getPlayers().get(i), i+1,game.getTrash().get(length-1));
+            do{            
+                pickCardNew = getPickCard();
+                System.out.print("");
+            }while (pickCardNew==-10);
+        }
+
+        game.play(pickCardNew);
+       
+   }
+   
+   public void startPlayerInterface(Player hey, int place,Card trash)
+   {
+       ArrayList<JPanel> tabJPanel= new ArrayList<JPanel>();
        
         /* Initialisation of the interface */
         setTitle("Player " + place);
@@ -31,25 +54,28 @@ public class GraphicInterface extends JFrame
         add(panelPickCard);
             
         /* Insertion of the void */
-        for (int i = 0; i<hey.getDeck().size()-1; i++ ) {
+        for (int i = 0; i<hey.getDeck().size()-2; i++ ) {
             JLabel buttonVoid = new JLabel("");
             JPanel panelVoid = new JPanel();
             panelVoid.add(buttonVoid);
             add(panelVoid);
         }
         
+        /*Insertion of the Trash*/
+        JLabel TrashCard = new JLabel(trash.getImage());
+        JPanel panelTrashCard = new JPanel();
+        panelTrashCard.add(TrashCard);
+        add(panelTrashCard);
+        
         /* Insertion of the deck of the player */
         for (int i = 0; i<hey.getDeck().size(); i++ ) {
             String t = String.valueOf(i);
-            
-            System.out.println(hey.getDeck().get(i).getImage());
             JButton button = new JButton(t,hey.getDeck().get(i).getImage());
-            button.addActionListener(new PlayCardListener());          
+            button.addActionListener(new PlayNumberCardListener());          
             
             JPanel panel = new JPanel();
             panel.add(button);
-            add(panel);
-            
+            add(panel);  
         }
 
         // Display the window.
@@ -57,7 +83,7 @@ public class GraphicInterface extends JFrame
    }
    
    
-   private class PlayCardListener implements ActionListener
+   private class PlayNumberCardListener implements ActionListener
    {
       @Override
       public void actionPerformed(ActionEvent e)
@@ -66,9 +92,11 @@ public class GraphicInterface extends JFrame
           String source = e.getActionCommand();
           int resultat = Integer.parseInt(source);
           
+          setPickCard(resultat);
+          setVisible(false);
+          
           /// A DELETE PLUS TARD
           System.out.println(resultat);
-          
       }
    }
    
@@ -83,4 +111,13 @@ public class GraphicInterface extends JFrame
       }
    }
    
+   public int getPickCard()
+   {
+       return m_pickCard;
+   }
+   
+   public void setPickCard(int enter)
+   {
+       m_pickCard = enter;
+   }
 }
