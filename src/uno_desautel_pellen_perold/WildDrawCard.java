@@ -6,10 +6,12 @@ public class WildDrawCard implements Card {
 
     private char m_color;
     private final ImageIcon m_image;
+    private final int m_value;
     
     public WildDrawCard () {
         m_color =ALL_COLORS_CARD;
         m_image = initImageWildDrawCard();
+        m_value = 50;
     }
     
     private ImageIcon initImageWildDrawCard() {
@@ -34,6 +36,11 @@ public class WildDrawCard implements Card {
     @Override
     public ImageIcon getImage() {
         return m_image;
+    }
+    
+    @Override
+    public int getValue() {
+        return m_value;
     }
 
     @Override

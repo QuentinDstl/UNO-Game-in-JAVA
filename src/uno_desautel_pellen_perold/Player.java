@@ -6,9 +6,11 @@ public class Player {
 
     private ArrayList <Card> m_deck;
     public static final int NUMBER_OF_CARD = 7;
+    public int m_deck_value;
     
     public Player() {
         m_deck = new ArrayList<>();
+        m_deck_value = 0;
     }
     
     /**
@@ -36,6 +38,21 @@ public class Player {
         catch (IndexOutOfBoundsException e) {
             System.out.println("Exception : " + e.getMessage());
         }
+    }
+    
+    public void sayUno() {
+        //mettre le code de la fenetre dire UNO
+    }
+    
+    public void calculateDeckValue(){
+        
+        for(int i=0; i<m_deck.size(); ++i) {
+            m_deck_value += m_deck.get(i).getValue();
+        }
+    }
+    
+    public int getDeckValue() {
+        return m_deck_value;
     }
     
     public void pickCard(Card pick) {

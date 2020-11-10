@@ -6,10 +6,12 @@ public class SkipCard implements Card {
 
     private final char m_color;
     private final ImageIcon m_image;
+    private final int m_value;
     
     public SkipCard(char color) {
         m_color = color;
         m_image = initImageSkipCard(color);
+        m_value = 20;
     }
     
     private ImageIcon initImageSkipCard(char color) {
@@ -34,6 +36,11 @@ public class SkipCard implements Card {
     @Override
     public ImageIcon getImage() {
         return m_image;
+    }
+    
+    @Override
+    public int getValue() {
+        return m_value;
     }
 
     @Override

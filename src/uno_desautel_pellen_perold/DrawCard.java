@@ -6,11 +6,12 @@ public class DrawCard implements Card {
 
     private char m_color;
     private final ImageIcon m_image;
+    private final int m_value;
     
     public DrawCard() {
        m_color = ALL_COLORS_CARD;
        m_image = initImageDrawCard();
-              
+       m_value = 50;       
     }
     
     private ImageIcon initImageDrawCard() {
@@ -34,6 +35,11 @@ public class DrawCard implements Card {
     @Override
     public ImageIcon getImage() {
         return m_image;
+    }
+    
+    @Override
+    public int getValue() {
+        return m_value;
     }
 
     @Override

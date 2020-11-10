@@ -6,10 +6,12 @@ public class WildCard implements Card {
 
     private final char m_color;
     private final ImageIcon m_image;
+    private final int m_value;
     
     public WildCard (char color) {
         m_color = color;
         m_image = initImageWildCard(color);
+        m_value = 20;
     }
     
     private ImageIcon initImageWildCard(char color) {
@@ -34,6 +36,11 @@ public class WildCard implements Card {
     @Override
     public ImageIcon getImage() {
         return m_image;
+    }
+    
+    @Override
+    public int getValue() {
+        return m_value;
     }
 
     @Override

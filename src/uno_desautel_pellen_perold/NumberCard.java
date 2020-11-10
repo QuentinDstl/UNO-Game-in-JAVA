@@ -7,12 +7,14 @@ public class NumberCard implements Card {
     private final char m_color;
     private final int m_number;
     private final ImageIcon m_image;
+    private final int m_value;
     
     public NumberCard (char color, int number){
         //TODO faire les blindages ici de color et number
         m_color = color;
         m_number = number;
         m_image = initImageNumberCard(m_color, m_number);
+        m_value = m_number;
     }
     
     
@@ -39,6 +41,11 @@ public class NumberCard implements Card {
     @Override
     public ImageIcon getImage() {
         return m_image;
+    }
+    
+    @Override
+    public int getValue() {
+        return m_value;
     }
 
     /**

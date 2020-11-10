@@ -137,6 +137,8 @@ public interface Card {
     public ImageIcon getImage();
 
     public int getSymbol();                // get the symbol
+    
+    public int getValue();
 
     public boolean canPlayOn(Card card);    // test if it can be played
 

@@ -166,6 +166,7 @@ public class Game {
             player.removeCard(pos);
             m_trash.add(card);
             this.next();
+            player.sayUno();
         }
         else {
             JOptionPane.showMessageDialog(null, "You can't play this card");
@@ -260,8 +261,10 @@ public class Game {
             win = displayTwo.startGamenterface(this,this.m_playTurn,win);
             
             if(getPlayerDeck(m_playTurn).isEmpty())
+            {
                 /* Valeur de win pour victoire */
                 win = 100;
+            }
             
             if (win == 20)
             {
@@ -273,12 +276,24 @@ public class Game {
                 win = 0;
             }
             
-        }while((win == 0)||(win == 10)) ;
+        }while((win == 0)||(win == 10));
+        
+        /*ArrayList<Player> ranking = new ArrayList<>();
+        ranking = m_players;
+        for(int i=0; i<ranking.size(); ++i) {
+            for(int j=0; j<i; ++j) {
+                if(ranking.get(j).getDeckValue() < ranking.get(i).getDeckValue())
+                    Collections.swap(ranking, i, j);
+            }
+        }*/
+        
+        //Fenetre de victoire
     }
     
     public void WildCard() {
         m_addedCards++;
     }
+    
 }
 
 

@@ -6,10 +6,12 @@ public class ReverseCard implements Card {
 
     private final char m_color;
     private final ImageIcon m_image;
+    private final int m_value;
     
     public ReverseCard(char color) {
         m_color = color;
         m_image = initImageReverseCard(color);
+        m_value = 20;
     }
     
     private ImageIcon initImageReverseCard(char color) {
@@ -35,6 +37,11 @@ public class ReverseCard implements Card {
     public ImageIcon getImage() {
         return m_image;
     }
+    
+    @Override
+    public int getValue() {
+        return m_value;
+    }
 
     @Override
     public boolean canPlayOn(Card card) {
@@ -46,6 +53,14 @@ public class ReverseCard implements Card {
 
     @Override
     public void play(Game g) {
-        g.switchOrder();
+        /* Lorsqu'une partie se déroule à 2, le changement de sens a le rôle d'un passe ton tour */
+        if(g.getPlayers().size()!=2)
+        {
+            g.switchOrder();
+        }
+        else if(g.getPlayers().size()==2)
+        {
+            g.next();
+        }
     }
 }
