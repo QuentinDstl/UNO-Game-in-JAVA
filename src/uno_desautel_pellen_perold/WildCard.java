@@ -38,7 +38,10 @@ public class WildCard implements Card {
 
     @Override
     public boolean canPlayOn(Card card) {
-        return true;
+        if(this.m_color == card.getColor())
+            return true;
+        else 
+            return  card.getSymbol() == WILD_CARD;
     }
 
     @Override
