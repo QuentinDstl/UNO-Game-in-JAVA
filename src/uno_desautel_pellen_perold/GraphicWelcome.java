@@ -19,8 +19,11 @@ public class GraphicWelcome extends JFrame
     private final int WINDOW_HEIGHT = 682;  // Window heigh
     private int numberPlayer=0;
    
-    public GraphicWelcome()
-    {
+    public GraphicWelcome() { 
+        initGraphicWelcome();
+    }
+    
+    private void initGraphicWelcome() {
         setTitle("UNO Game");
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

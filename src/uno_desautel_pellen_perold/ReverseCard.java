@@ -4,15 +4,15 @@ import javax.swing.ImageIcon;
 
 public class ReverseCard implements Card {
 
-    private char m_color;
-    private ImageIcon m_image;
+    private final char m_color;
+    private final ImageIcon m_image;
     
     public ReverseCard(char color) {
         m_color = color;
         m_image = initImageReverseCard(color);
     }
     
-    public ImageIcon initImageReverseCard(char color) {
+    private ImageIcon initImageReverseCard(char color) {
         ImageIcon image_card = null;
         String file_name = "CarteUNO\\";
         file_name = file_name + "\\reverse";

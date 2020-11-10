@@ -16,7 +16,7 @@ public class GraphicInterface extends JFrame
    {
         
    }
-   public int startGamenterface(Game game, int player)
+   public boolean startGamenterface(Game game, int player)
    {
        int length = game.getTrash().size();
        int pickCardNew = 0;
@@ -47,12 +47,12 @@ public class GraphicInterface extends JFrame
                 if(chooseAfterPick ==0)
                     
                 else
-                    return 1;*/
-                return 0;
+                    return true;*/
+                return false;
         }
         else
             game.play(pickCardNew);  
-        return 0;
+        return false;
    }
    
    public void startPlayerInterface(Player hey, int place,Card trash)

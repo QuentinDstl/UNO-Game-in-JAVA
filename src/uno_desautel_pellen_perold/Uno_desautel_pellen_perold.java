@@ -15,12 +15,9 @@ public class Uno_desautel_pellen_perold {
     public static void playGame()
     {
         /* initialisation of the  game */
-        Game game = new Game();
-        int numberPlayers  = playWelcome();
         
-        game.initPickCards();
-        game.initPlayers(numberPlayers);
-        game.initTrash();
+        int numberPlayers  = playWelcome();
+        Game game = new Game(numberPlayers);
         
         game.startGame();
  
@@ -30,6 +27,7 @@ public class Uno_desautel_pellen_perold {
     {
         int numberPlayer=0;
         GraphicWelcome displayOne = new GraphicWelcome();
+        
         
         do 
         {            

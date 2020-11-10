@@ -48,6 +48,7 @@ public interface Card {
     public final static char GREEN_CARD = 'G';
     public final static char YELLOW_CARD = 'Y';
     public final static char ALL_COLORS_CARD = 'S';
+    public final static char NO_COLOR_SELECT = '%';
     
     
     /* UNO CARD's IMAGES */

@@ -4,15 +4,15 @@ import javax.swing.ImageIcon;
 
 public class WildCard implements Card {
 
-    private char m_color;
-    private ImageIcon m_image;
+    private final char m_color;
+    private final ImageIcon m_image;
     
     public WildCard (char color) {
         m_color = color;
         m_image = initImageWildCard(color);
     }
     
-    public ImageIcon initImageWildCard(char color) {
+    private ImageIcon initImageWildCard(char color) {
         ImageIcon image_card = null;
         String file_name = "CarteUNO\\";
         file_name = file_name + "\\wild";
@@ -38,7 +38,7 @@ public class WildCard implements Card {
 
     @Override
     public boolean canPlayOn(Card card) {
-        return false;
+        return true;
     }
 
     @Override

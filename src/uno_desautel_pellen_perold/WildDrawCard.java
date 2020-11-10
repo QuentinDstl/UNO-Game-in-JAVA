@@ -5,14 +5,14 @@ import javax.swing.ImageIcon;
 public class WildDrawCard implements Card {
 
     private char m_color;
-    private ImageIcon m_image;
+    private final ImageIcon m_image;
     
     public WildDrawCard () {
         m_color =ALL_COLORS_CARD;
         m_image = initImageWildDrawCard();
     }
     
-    public ImageIcon initImageWildDrawCard() {
+    private ImageIcon initImageWildDrawCard() {
         ImageIcon image_card = null;
         String file_name = "CarteUNO\\";
         file_name = file_name + "\\";
@@ -38,13 +38,19 @@ public class WildDrawCard implements Card {
 
     @Override
     public boolean canPlayOn(Card card) {
-        return false;
+        return true;
     }
 
     @Override
     public void play(Game g) {
-        //TODO faire ici le choix de la couleur de la nouvelle carte
-        m_color = 'B';
-        // change color of the card
+       GraphicColor gColor = new GraphicColor();
+        char letterChoose = NO_COLOR_SELECT;
+        do {   
+            letterChoose = gColor.chooseColor();
+            System.out.print("");
+            
+        } while (letterChoose == NO_COLOR_SELECT);
+        
+        m_color = letterChoose;
     }
 }

@@ -4,15 +4,15 @@ import javax.swing.ImageIcon;
 
 public class SkipCard implements Card {
 
-    private char m_color;
-    private ImageIcon m_image;
+    private final char m_color;
+    private final ImageIcon m_image;
     
     public SkipCard(char color) {
         m_color = color;
         m_image = initImageSkipCard(color);
     }
     
-    public ImageIcon initImageSkipCard(char color) {
+    private ImageIcon initImageSkipCard(char color) {
         ImageIcon image_card = null;
         String file_name = "CarteUNO\\";
         file_name = file_name + "\\skip";

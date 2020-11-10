@@ -13,12 +13,10 @@ import javax.swing.*;  // Needed for Swing classes
 
 public class GraphicColor extends JFrame
 {
-   protected char letterColorFinal = 'Z';
+   protected char letterColorFinal = Card.NO_COLOR_SELECT;
 
    public GraphicColor()
-   {
-      
-   }
+   {}
    
    public char chooseColor()
    {

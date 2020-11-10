@@ -16,34 +16,39 @@ public class Game {
     private boolean m_order;
     
     /* CONSTRUCTOR */
-    public Game() {
+    public Game(int numberPlayers) {
         
         m_pick_cards = new ArrayList<>();
         m_trash = new ArrayList<>();
         m_players = new ArrayList<>();
         m_playTurn = 0;
         m_order = true;
+        
+        initAll(numberPlayers);
     }
     
     /* INITIALISATION METHODS */
-    public void initPickCards() {
+    private void initAll(int numberPlayers) {
         initNumberCards();
         initSkipCards();
         initReverseCards();
         initWildCards();
         initDrawCards();
         initWildDrawCards();
+        
         m_pick_cards = shufflePickCards(m_pick_cards);
+        initPlayers(numberPlayers);
+        initTrash();
     }
-    
-    public void initNumberCards() {
+
+    private void initNumberCards() {
         initNumberColorCards(Card.BLUE_CARD);
         initNumberColorCards(Card.RED_CARD);
         initNumberColorCards(Card.YELLOW_CARD);
         initNumberColorCards(Card.GREEN_CARD);
     }
     
-    public void initNumberColorCards(char color) {
+    private void initNumberColorCards(char color) {
         m_pick_cards.add( new NumberCard(color, 0));
         for(int j=0; j<Card.NB_COLOR_CARDS_EXCEPT_0/2; ++j)
         {
@@ -52,49 +57,49 @@ public class Game {
         }
     }
     
-    public void initSkipCards() {
+    private void initSkipCards() {
         initSkipColorCards(Card.BLUE_CARD);
         initSkipColorCards(Card.RED_CARD);
         initSkipColorCards(Card.YELLOW_CARD);
         initSkipColorCards(Card.GREEN_CARD);
     }
     
-    public void initSkipColorCards(char color) {
+    private void initSkipColorCards(char color) {
         m_pick_cards.add( new SkipCard(color));
         m_pick_cards.add( new SkipCard(color));
     }
     
-    public void initReverseCards() {
+    private void initReverseCards() {
         initReverseColorCards(Card.BLUE_CARD);
         initReverseColorCards(Card.RED_CARD);
         initReverseColorCards(Card.YELLOW_CARD);
         initReverseColorCards(Card.GREEN_CARD);
     }
     
-    public void initReverseColorCards(char color) {
+    private void initReverseColorCards(char color) {
         m_pick_cards.add( new ReverseCard(color));
         m_pick_cards.add( new ReverseCard(color));
     }
     
-    public void initWildCards() {
+    private void initWildCards() {
         initWildColorCards(Card.BLUE_CARD);
         initWildColorCards(Card.RED_CARD);
         initWildColorCards(Card.YELLOW_CARD);
         initWildColorCards(Card.GREEN_CARD);
     }
     
-    public void initWildColorCards(char color) {
+    private void initWildColorCards(char color) {
         m_pick_cards.add( new WildCard(color));
         m_pick_cards.add( new WildCard(color));
     }
     
-    public void initDrawCards() {
+    private void initDrawCards() {
         for(int i=0; i<Card.NB_DRAW_CARDS; ++i) {
             m_pick_cards.add( new DrawCard());
         }
     }
     
-    public void initWildDrawCards() {
+    private void initWildDrawCards() {
         for(int i=0; i<Card.NB_WILD_DRAW_CARDS; ++i) {
             m_pick_cards.add( new WildDrawCard());
         }
@@ -112,7 +117,7 @@ public class Game {
         }
     }
     
-    public void initTrash()
+    private void initTrash()
     {
         m_trash.add(m_pick_cards.get(m_pick_cards.size()-1));
         m_pick_cards.remove(m_pick_cards.size()-1);
@@ -219,14 +224,14 @@ public class Game {
     public void startGame()
     {
         ///METTRE LA CONDTION DE VICTOIRE ICI
-        int test =0;
+        boolean win = false;
         int testàsupp= -10;
         do
         {
            GraphicInterface displayTwo = new GraphicInterface();
 
-           test = displayTwo.startGamenterface(this,this.m_playTurn);
+           win = displayTwo.startGamenterface(this,this.m_playTurn);
            
-        }while(test ==0);
+        }while(!win);
     }
 }

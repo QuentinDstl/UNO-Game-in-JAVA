@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 public class DrawCard implements Card {
 
     private char m_color;
-    private ImageIcon m_image;
+    private final ImageIcon m_image;
     
     public DrawCard() {
        m_color = ALL_COLORS_CARD;
@@ -13,7 +13,7 @@ public class DrawCard implements Card {
               
     }
     
-    public ImageIcon initImageDrawCard() {
+    private ImageIcon initImageDrawCard() {
         ImageIcon image_card = null;
         String file_name = "CarteUNO\\";
         file_name = file_name + "\\draw.jpg";
@@ -44,13 +44,13 @@ public class DrawCard implements Card {
     @Override
     public void play(Game g) 
     {
-        GraphicColor chooseColor = new GraphicColor();
-        char letterChoose;
+        GraphicColor gColor = new GraphicColor();
+        char letterChoose = NO_COLOR_SELECT;
         do {   
-            letterChoose = chooseColor.chooseColor();
+            letterChoose = gColor.chooseColor();
             System.out.print("");
             
-        } while (letterChoose == 'Z');
+        } while (letterChoose == NO_COLOR_SELECT);
         
         m_color = letterChoose;
     }

@@ -4,9 +4,9 @@ import javax.swing.ImageIcon;
 
 public class NumberCard implements Card {
 
-    private char m_color;
-    private int m_number;
-    private ImageIcon m_image;
+    private final char m_color;
+    private final int m_number;
+    private final ImageIcon m_image;
     
     public NumberCard (char color, int number){
         //TODO faire les blindages ici de color et number
@@ -16,7 +16,7 @@ public class NumberCard implements Card {
     }
     
     
-    public ImageIcon initImageNumberCard(char color, int number) {
+    private ImageIcon initImageNumberCard(char color, int number) {
         ImageIcon image_card = null;
         String file_name = "CarteUNO\\";
         file_name = file_name + "\\";
