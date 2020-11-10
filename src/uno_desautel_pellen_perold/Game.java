@@ -146,10 +146,13 @@ public class Game {
     }
     
     public void play(int pos) {
-        Card card  = m_players.get(m_playTurn).play(pos,m_trash);
+        Player player  = m_players.get(m_playTurn);
+        Card card = player.getCard(pos);
+        
         if(card.canPlayOn(m_trash.get(m_trash.size()-1)))
         {
             card.play(this);
+            player.removeCard(pos);
             m_trash.add(card);
             this.next();
         }
