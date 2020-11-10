@@ -210,13 +210,15 @@ public class Game {
     
     public void startGame()
     {
+        ///METTRE LA CONDTION DE VICTOIRE ICI
         int test =0;
         
         do
         {
             GraphicInterface displayTwo = new GraphicInterface();
 
-            displayTwo.startGamenterface(this);
+            displayTwo.startGamenterface(this,this.m_playTurn);
+            displayTwo.removeAll();
         }while(test ==0);
     }
 }

@@ -16,11 +16,18 @@ public class GraphicInterface extends JFrame
    {
         
    }
-   public void startGamenterface(Game game)
+   public void startGamenterface(Game game, int player)
    {
        int length = game.getTrash().size();
        int pickCardNew = 0;
 
+        startPlayerInterface(game.getPlayers().get(player), player+1,game.getTrash().get(length-1));
+        do{            
+            pickCardNew = getPickCard();
+            System.out.print("");
+        }while (pickCardNew==-10);
+       
+       /*
        for (int i=0; i < game.getPlayers().size(); i++)
        {
             startPlayerInterface(game.getPlayers().get(i), i+1,game.getTrash().get(length-1));
@@ -28,7 +35,7 @@ public class GraphicInterface extends JFrame
                 pickCardNew = getPickCard();
                 System.out.print("");
             }while (pickCardNew==-10);
-        }
+        }*/
 
         game.play(pickCardNew);
        
