@@ -60,7 +60,6 @@ public class NumberCard implements Card {
      */
     @Override
     public void play(Game g) {
-        //g.getPlayer();
     }
 
 }

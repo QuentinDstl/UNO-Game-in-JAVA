@@ -140,6 +140,15 @@ public class Game {
     }
     
     public void removePickCard() {
+        /* Si la pipche est vide */
+        if(m_pick_cards.size() == 1) {
+            for(int i=0; i<m_trash.size()-1;i++){
+                m_pick_cards.add(m_trash.get(0));
+                m_trash.remove(0);
+            }
+            m_pick_cards = shufflePickCards(m_pick_cards);                          // on melange la nouvelle pioche
+        }
+
         m_pick_cards.remove(m_pick_cards.size()-1);
     }
     
@@ -165,6 +174,8 @@ public class Game {
     
     /* SHUFFLE OF LIST METHOD */
     public ArrayList<Card> shufflePickCards(ArrayList<Card> pick_cards) {
+        System.out.println("Game have been shuffle");
+        
         Random randomGenerator = new Random();  //declaration of an aleatory object
         int randomInt; 
         
@@ -173,9 +184,9 @@ public class Game {
             tab[i] = false;
         }
         
-        for(int i=0; i<Card.NB_TOTAL_CARDS; ++i) {
+        for(int i=0; i<m_pick_cards.size(); ++i) {
             do {
-                randomInt = randomGenerator.nextInt(Card.NB_TOTAL_CARDS);
+                randomInt = randomGenerator.nextInt(m_pick_cards.size());
             }while(tab[randomInt]!=false);
             
             Collections.swap(pick_cards, i, randomInt); //aleatory swap
@@ -242,13 +253,13 @@ public class Game {
            
            /* Si il y a des cartes à ajouter au deck du joueur */
            for(int i=0; i<m_addedCards; i++) {
-               Card lastCardOfPicksCard = m_pick_cards.get(m_pick_cards.size()-1);      // derniere carte de la pioche
-               m_players.get(this.m_playTurn).pickCard(lastCardOfPicksCard);
-               this.removePickCard();
+                Card lastCardOfPicksCard = m_pick_cards.get(m_pick_cards.size()-1);  // derniere carte de la pioche
+                m_players.get(this.m_playTurn).pickCard(lastCardOfPicksCard);
+                this.removePickCard();
            }
            
            
-           m_addedCards = 0;                                                            // on remet le compteur à 0
+           m_addedCards = 0;                                                        // on remet le compteur à 0
 
            win = displayTwo.startGamenterface(this,this.m_playTurn);
            
