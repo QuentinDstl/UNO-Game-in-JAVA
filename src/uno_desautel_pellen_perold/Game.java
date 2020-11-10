@@ -259,6 +259,10 @@ public class Game {
 
             win = displayTwo.startGamenterface(this,this.m_playTurn,win);
             
+            if(getPlayerDeck(m_playTurn).isEmpty())
+                /* Valeur de win pour victoire */
+                win = 100;
+            
             if (win == 20)
             {
                 m_playTurn = m_playTurn +1;
