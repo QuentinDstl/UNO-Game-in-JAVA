@@ -220,13 +220,13 @@ public class Game {
     {
         ///METTRE LA CONDTION DE VICTOIRE ICI
         int test =0;
-        
+        int testàsupp= -10;
         do
         {
            GraphicInterface displayTwo = new GraphicInterface();
 
-           displayTwo.startGamenterface(this,this.m_playTurn);
-            
+           test = displayTwo.startGamenterface(this,this.m_playTurn);
+           
         }while(test ==0);
     }
 }

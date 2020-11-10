@@ -16,7 +16,7 @@ public class GraphicInterface extends JFrame
    {
         
    }
-   public void startGamenterface(Game game, int player)
+   public int startGamenterface(Game game, int player)
    {
        int length = game.getTrash().size();
        int pickCardNew = 0;
@@ -30,7 +30,29 @@ public class GraphicInterface extends JFrame
 
         }while (pickCardNew == -10);
        
-        game.play(pickCardNew);      
+        if (pickCardNew == -20)
+        {
+            game.getPlayers().get(player).pickCard(game.getCard(game.getSizePickCards()-1));
+            
+            /*GraphicAfterPick AfterPickInstance = new GraphicAfterPick();
+                
+                int chooseAfterPick;
+                do 
+                {   
+                    chooseAfterPick = AfterPickInstance.AfterPick();
+                    System.out.print("");
+
+                } while ((chooseAfterPick != '0') || (chooseAfterPick != '1'));
+                
+                if(chooseAfterPick ==0)
+                    
+                else
+                    return 1;*/
+                return 0;
+        }
+        else
+            game.play(pickCardNew);  
+        return 0;
    }
    
    public void startPlayerInterface(Player hey, int place,Card trash)
@@ -45,7 +67,7 @@ public class GraphicInterface extends JFrame
         /*Creation of the grid */
         setLayout(new GridLayout(2, hey.getDeck().size()));
         
-        /*Insertion of the pickCard */
+        /* Insertion of the pickCard */
         JButton buttonPickCard = new JButton(new ImageIcon("CarteUNO\\doscarte.jpg"));
         buttonPickCard.addActionListener(new PlayPickCardListener());
         JPanel panelPickCard = new JPanel();
@@ -60,7 +82,7 @@ public class GraphicInterface extends JFrame
             add(panelVoid);
         }
         
-        /*Insertion of the Trash*/
+        /* Insertion of the Trash */
         JLabel TrashCard = new JLabel(trash.getImage());
         JPanel panelTrashCard = new JPanel();
         panelTrashCard.add(TrashCard);
@@ -77,7 +99,6 @@ public class GraphicInterface extends JFrame
             add(panel);  
         }
 
-        // Display the window.
         setVisible(true);
    }
    
@@ -102,9 +123,9 @@ public class GraphicInterface extends JFrame
       @Override
       public void actionPerformed(ActionEvent e)
       {
-          String source = e.getActionCommand();
+          m_pickCard = -20;
           
-          System.out.println(source);
+          setVisible(false);
       }
    }
 }
