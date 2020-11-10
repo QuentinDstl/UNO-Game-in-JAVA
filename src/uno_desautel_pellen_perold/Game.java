@@ -253,6 +253,10 @@ public class Game {
             if (win == 20)
             {
                 m_playTurn = m_playTurn +1;
+                if (m_playTurn == m_players.size())
+                {
+                    m_playTurn = 0;
+                }
                 win = 0;
             }
             
