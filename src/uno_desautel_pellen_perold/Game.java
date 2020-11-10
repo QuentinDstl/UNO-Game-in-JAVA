@@ -218,7 +218,7 @@ public class Game {
             GraphicInterface displayTwo = new GraphicInterface();
 
             displayTwo.startGamenterface(this,this.m_playTurn);
-            displayTwo.removeAll();
+            
         }while(test ==0);
     }
 }
