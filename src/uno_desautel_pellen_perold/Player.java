@@ -19,7 +19,7 @@ public class Player {
     public Card play(int pos) {
         Card card = null;
         
-        try { 
+        try {
             card = m_deck.get(pos);
             m_deck.remove(pos);
         }

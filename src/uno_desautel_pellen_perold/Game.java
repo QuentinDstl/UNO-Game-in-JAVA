@@ -135,10 +135,16 @@ public class Game {
     
     public void play(int pos) {
         Card card  = m_players.get(m_playTurn).play(pos);
-        card.play(this);
-        m_trash.add(card);
+        if(card.canPlayOn(m_trash.get(m_trash.size()-1)))
+        {
+            card.play(this);
+            m_trash.add(card);
+            this.next();
+        }
+        else {
+            System.out.println("You can't play this card");
+        }
         System.out.println("SALUT'");
-        this.next();
     }
     
     /* SHUFFLE OF LIST METHOD */
@@ -215,6 +221,15 @@ public class Game {
         
         do
         {
+            System.out.println("CHANGEMENT JOUEUR");
+            for(int i=0; i<getPlayers().size(); ++i)
+            {    
+                for(int j=0; j<getPlayers().get(i).getDeck().size(); ++j)
+                {
+                    System.out.println(getPlayers().get(i).getDeck().get(j).getSymbol() +"\t" +getPlayers().get(i).getDeck().get(j).getColor());
+                }
+                System.out.println("\n");
+            }
             GraphicInterface displayTwo = new GraphicInterface();
 
             displayTwo.startGamenterface(this,this.m_playTurn);

@@ -60,7 +60,7 @@ public class GraphicInterface extends JFrame
         panelPickCard.add(buttonPickCard);
         add(panelPickCard);
             
-        /* Insertion of the void */
+        /* Insertion of there void */
         for (int i = 0; i<hey.getDeck().size()-2; i++ ) {
             JLabel buttonVoid = new JLabel("");
             JPanel panelVoid = new JPanel();
