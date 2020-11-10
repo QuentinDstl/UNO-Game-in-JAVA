@@ -46,6 +46,9 @@ public class WildCard implements Card {
 
     @Override
     public void play(Game g) {
-        
+        /* +2 cartes pour le joueur suivant */
+        for(int i=0; i<2; i++) {
+            g.WildCard();
+        }
     }
 }

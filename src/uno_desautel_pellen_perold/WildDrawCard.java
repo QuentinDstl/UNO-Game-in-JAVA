@@ -52,5 +52,10 @@ public class WildDrawCard implements Card {
         } while (letterChoose == NO_COLOR_SELECT);
         
         m_color = letterChoose;
+        
+        /* +4 cartes pour le joueur suivant */
+        for(int i=0; i<4; i++) {
+            g.WildCard();
+        }
     }
 }
