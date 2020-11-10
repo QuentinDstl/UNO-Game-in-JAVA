@@ -16,12 +16,16 @@ public class Player {
      * @param pos
      * @return Card card
      */
-    public Card play(int pos) {
+    public Card play(int pos, ArrayList<Card> m_trash) {
         Card card = null;
         
         try {
+            
             card = m_deck.get(pos);
-            m_deck.remove(pos);
+            if(card.canPlayOn(m_trash.get(m_trash.size()-1)))
+            {
+                m_deck.remove(pos);
+            }
         }
         
         catch (IndexOutOfBoundsException e) {

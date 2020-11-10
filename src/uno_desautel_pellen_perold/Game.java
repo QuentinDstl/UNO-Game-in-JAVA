@@ -134,7 +134,7 @@ public class Game {
     }
     
     public void play(int pos) {
-        Card card  = m_players.get(m_playTurn).play(pos);
+        Card card  = m_players.get(m_playTurn).play(pos,m_trash);
         if(card.canPlayOn(m_trash.get(m_trash.size()-1)))
         {
             card.play(this);
@@ -221,7 +221,7 @@ public class Game {
         
         do
         {
-            /*System.out.println("CHANGEMENT JOUEUR");
+            System.out.println("CHANGEMENT JOUEUR");
             for(int i=0; i<getPlayers().size(); ++i)
             {    
                 for(int j=0; j<getPlayers().get(i).getDeck().size(); ++j)
@@ -229,7 +229,7 @@ public class Game {
                     System.out.println(getPlayers().get(i).getDeck().get(j).getSymbol() +"\t" +getPlayers().get(i).getDeck().get(j).getColor());
                 }
                 System.out.println("\n");
-            }*/
+            }
             GraphicInterface displayTwo = new GraphicInterface();
 
             displayTwo.startGamenterface(this,this.m_playTurn);
