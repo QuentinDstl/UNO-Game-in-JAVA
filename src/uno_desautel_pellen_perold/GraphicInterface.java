@@ -22,28 +22,20 @@ public class GraphicInterface extends JFrame
        int pickCardNew = 0;
 
         startPlayerInterface(game.getPlayers().get(player), player+1,game.getTrash().get(length-1));
-        do{            
-            pickCardNew = getPickCard();
+        
+        do
+        {   /* Shielding for user action */         
+            pickCardNew = m_pickCard;
             System.out.print("");
-        }while (pickCardNew==-10);
-       
-       /*
-       for (int i=0; i < game.getPlayers().size(); i++)
-       {
-            startPlayerInterface(game.getPlayers().get(i), i+1,game.getTrash().get(length-1));
-            do{            
-                pickCardNew = getPickCard();
-                System.out.print("");
-            }while (pickCardNew==-10);
-        }*/
 
-        game.play(pickCardNew);
+        }while (pickCardNew == -10);
        
+        game.play(pickCardNew);      
    }
    
    public void startPlayerInterface(Player hey, int place,Card trash)
    {
-       ArrayList<JPanel> tabJPanel= new ArrayList<JPanel>();
+         //ArrayList<JPanel> tabJPanel= new ArrayList<JPanel>();
        
         /* Initialisation of the interface */
         setTitle("Player " + place);
@@ -99,11 +91,17 @@ public class GraphicInterface extends JFrame
           String source = e.getActionCommand();
           int resultat = Integer.parseInt(source);
           
-          setPickCard(resultat);
+          /*
+          if ()
+          {
+              JOptionPane.showMessageDialog(null, "You can't play this card");
+          }*/
+          
+          m_pickCard = resultat;
           setVisible(false);
           
           /// A DELETE PLUS TARD
-          System.out.println(resultat);
+          //System.out.println(resultat);
       }
    }
    
@@ -116,15 +114,5 @@ public class GraphicInterface extends JFrame
           
           System.out.println(source);
       }
-   }
-   
-   public int getPickCard()
-   {
-       return m_pickCard;
-   }
-   
-   public void setPickCard(int enter)
-   {
-       m_pickCard = enter;
    }
 }
