@@ -3,6 +3,9 @@ package uno_desautel_pellen_perold;
 import java.util.ArrayList;
 import java.util.Random; 
 import java.util.Collections;
+import javax.swing.*; // Needed for Swing classes
+import java.awt.*;    // Needed for GridLayout class
+import java.awt.event.*;
 
 public class Game {
     
@@ -142,9 +145,8 @@ public class Game {
             this.next();
         }
         else {
-            System.out.println("You can't play this card");
+            JOptionPane.showMessageDialog(null, "You can't play this card");
         }
-        System.out.println("SALUT'");
     }
     
     /* SHUFFLE OF LIST METHOD */
@@ -221,18 +223,9 @@ public class Game {
         
         do
         {
-            System.out.println("CHANGEMENT JOUEUR");
-            for(int i=0; i<getPlayers().size(); ++i)
-            {    
-                for(int j=0; j<getPlayers().get(i).getDeck().size(); ++j)
-                {
-                    System.out.println(getPlayers().get(i).getDeck().get(j).getSymbol() +"\t" +getPlayers().get(i).getDeck().get(j).getColor());
-                }
-                System.out.println("\n");
-            }
-            GraphicInterface displayTwo = new GraphicInterface();
+           GraphicInterface displayTwo = new GraphicInterface();
 
-            displayTwo.startGamenterface(this,this.m_playTurn);
+           displayTwo.startGamenterface(this,this.m_playTurn);
             
         }while(test ==0);
     }

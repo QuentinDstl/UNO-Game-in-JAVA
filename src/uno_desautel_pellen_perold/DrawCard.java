@@ -42,9 +42,16 @@ public class DrawCard implements Card {
     }
 
     @Override
-    public void play(Game g) {
-        //TODO faire ici le choix de la couleur de la nouvelle carte
-        m_color = 'B';
-        // change color of the card
+    public void play(Game g) 
+    {
+        GraphicColor chooseColor = new GraphicColor();
+        char letterChoose;
+        do {   
+            letterChoose = chooseColor.chooseColor();
+            System.out.print("");
+            
+        } while (letterChoose == 'Z');
+        
+        m_color = letterChoose;
     }
 }

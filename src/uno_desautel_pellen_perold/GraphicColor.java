@@ -13,11 +13,14 @@ import javax.swing.*;  // Needed for Swing classes
 
 public class GraphicColor extends JFrame
 {
-   /**
-      Constructor
-   */
+   protected char letterColorFinal = 'Z';
 
    public GraphicColor()
+   {
+      
+   }
+   
+   public char chooseColor()
    {
       setTitle("Choose your color");
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,6 +72,8 @@ public class GraphicColor extends JFrame
       // Pack and display the window.
       pack();
       setVisible(true);
+      
+      return letterColorFinal;
    }
    
    private class PushButton implements ActionListener
@@ -76,7 +81,16 @@ public class GraphicColor extends JFrame
       @Override
       public void actionPerformed(ActionEvent e)
       {
-         
+          /* Take the name of the card */
+          String source = e.getActionCommand();
+          /* Take th symbol of the color */
+          char letterChoose = source.charAt(0);
+          
+          letterColorFinal = letterChoose;
+          
+          setVisible(false);
+          
+          JOptionPane.showMessageDialog(null, "The color choosed is : " + source);
       }
    }
 }

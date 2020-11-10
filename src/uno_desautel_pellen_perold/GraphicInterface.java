@@ -91,17 +91,9 @@ public class GraphicInterface extends JFrame
           String source = e.getActionCommand();
           int resultat = Integer.parseInt(source);
           
-          /*
-          if ()
-          {
-              JOptionPane.showMessageDialog(null, "You can't play this card");
-          }*/
-          
           m_pickCard = resultat;
-          setVisible(false);
           
-          /// A DELETE PLUS TARD
-          //System.out.println(resultat);
+          setVisible(false);
       }
    }
    
