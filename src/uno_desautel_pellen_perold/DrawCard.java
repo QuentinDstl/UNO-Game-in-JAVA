@@ -38,7 +38,7 @@ public class DrawCard implements Card {
 
     @Override
     public boolean canPlayOn(Card card) {
-        return false;
+        return true;
     }
 
     @Override
