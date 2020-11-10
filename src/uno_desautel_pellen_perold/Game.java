@@ -137,6 +137,10 @@ public class Game {
         }
     }
     
+    public void removePickCard() {
+        m_pick_cards.remove(m_pick_cards.size()-1);
+    }
+    
     public void switchOrder() {
         m_order = !m_order;
     }

@@ -33,7 +33,7 @@ public class GraphicInterface extends JFrame
         if (pickCardNew == -20)
         {
             game.getPlayers().get(player).pickCard(game.getCard(game.getSizePickCards()-1));
-            
+            game.removePickCard();
             /*GraphicAfterPick AfterPickInstance = new GraphicAfterPick();
                 
                 int chooseAfterPick;
