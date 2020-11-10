@@ -244,26 +244,28 @@ public class Game {
     public void startGame()
     {
         ///METTRE LA CONDTION DE VICTOIRE ICI
-        boolean win = false;
+        int win = 0;
         do
         {
-           GraphicInterface displayTwo = new GraphicInterface();
+            GraphicInterface displayTwo = new GraphicInterface();
 
-           // on verifie si il y'a toujours une carte dans la pioche et si c'est le cas esce que'il y'en a assez pour en pick m_added_card
-           
-           /* Si il y a des cartes à ajouter au deck du joueur */
-           for(int i=0; i<m_addedCards; i++) {
-                Card lastCardOfPicksCard = m_pick_cards.get(m_pick_cards.size()-1);  // derniere carte de la pioche
-                m_players.get(this.m_playTurn).pickCard(lastCardOfPicksCard);
-                this.removePickCard();
-           }
-           
-           
-           m_addedCards = 0;                                                        // on remet le compteur à 0
+            /* Si il y a des cartes à ajouter au deck du joueur */
+            for(int i=0; i<m_addedCards; i++) {
+               Card lastCardOfPicksCard = m_pick_cards.get(m_pick_cards.size()-1);      // derniere carte de la pioche
+               m_players.get(this.m_playTurn).pickCard(lastCardOfPicksCard);
+               this.removePickCard();
+            }
+            m_addedCards = 0;                                                            // on remet le compteur à 0
 
-           win = displayTwo.startGamenterface(this,this.m_playTurn);
-           
-        }while(!win);
+            win = displayTwo.startGamenterface(this,this.m_playTurn,win);
+            
+            if (win == 20)
+            {
+                m_playTurn = m_playTurn +1;
+                win = 0;
+            }
+            
+        }while((win == 0)||(win == 10)) ;
     }
     
     public void WildCard() {

@@ -16,12 +16,12 @@ public class GraphicInterface extends JFrame
    {
         
    }
-   public boolean startGamenterface(Game game, int player)
+   public int startGamenterface(Game game, int player,int pickOrNot)
    {
-       int length = game.getTrash().size();
-       int pickCardNew = 0;
+        int length = game.getTrash().size();
+        int pickCardNew = 0;
 
-        startPlayerInterface(game.getPlayers().get(player), player+1,game.getTrash().get(length-1));
+        pickOrNot = startPlayerInterface(game.getPlayers().get(player), player+1,game.getTrash().get(length-1),pickOrNot);
         
         do
         {   /* Shielding for user action */         
@@ -34,28 +34,19 @@ public class GraphicInterface extends JFrame
         {
             game.getPlayers().get(player).pickCard(game.getCard(game.getSizePickCards()-1));
             game.removePickCard(); // on supprime dans la pioche la carte selectionne
-            /*GraphicAfterPick AfterPickInstance = new GraphicAfterPick();
-                
-                int chooseAfterPick;
-                do 
-                {   
-                    chooseAfterPick = AfterPickInstance.AfterPick();
-                    System.out.print("");
-
-                } while ((chooseAfterPick != '0') || (chooseAfterPick != '1'));
-                
-                if(chooseAfterPick ==0)
-                    
-                else
-                    return true;*/
-                return false;
+            pickOrNot = 10; //On indique pour le prochain tour qu'il ne pourra pas piocher
+        }
+        else if (pickCardNew == -21)
+        {
+            pickOrNot = 20;
         }
         else
             game.play(pickCardNew);  
-        return false;
+        
+        return pickOrNot;
    }
    
-   public void startPlayerInterface(Player hey, int place,Card trash)
+   public int startPlayerInterface(Player hey, int place,Card trash,int pickOrNot)
    {
          //ArrayList<JPanel> tabJPanel= new ArrayList<JPanel>();
        
@@ -67,12 +58,25 @@ public class GraphicInterface extends JFrame
         /*Creation of the grid */
         setLayout(new GridLayout(2, hey.getDeck().size()));
         
-        /* Insertion of the pickCard */
-        JButton buttonPickCard = new JButton(new ImageIcon("CarteUNO\\doscarte.jpg"));
-        buttonPickCard.addActionListener(new PlayPickCardListener());
-        JPanel panelPickCard = new JPanel();
-        panelPickCard.add(buttonPickCard);
-        add(panelPickCard);
+        if (pickOrNot == 0)
+        {
+            /* Insertion of the pickCard */
+            JButton buttonPickCard = new JButton(new ImageIcon("CarteUNO\\doscarte.jpg"));
+            buttonPickCard.addActionListener(new PlayPickCardListener());
+            JPanel panelPickCard = new JPanel();
+            panelPickCard.add(buttonPickCard);
+            add(panelPickCard);
+        }
+        else if (pickOrNot == 10)
+        {
+            /* Insertion of the button i can't play */
+            JButton buttonCantPlay = new JButton("I can't play");
+            buttonCantPlay.addActionListener(new PlayCantPlayListener());
+            JPanel panelCantPlay = new JPanel();
+            panelCantPlay.add(buttonCantPlay);
+            add(panelCantPlay);
+            pickOrNot = 0;
+        }
             
         /* Insertion of there void */
         for (int i = 0; i<hey.getDeck().size()-2; i++ ) {
@@ -100,6 +104,8 @@ public class GraphicInterface extends JFrame
         }
 
         setVisible(true);
+        
+        return pickOrNot;
    }
    
    
@@ -124,6 +130,17 @@ public class GraphicInterface extends JFrame
       public void actionPerformed(ActionEvent e)
       {
           m_pickCard = -20;
+          
+          setVisible(false);
+      }
+   }
+   
+   private class PlayCantPlayListener implements ActionListener
+   {
+      @Override
+      public void actionPerformed(ActionEvent e)
+      {
+          m_pickCard = -21;
           
           setVisible(false);
       }

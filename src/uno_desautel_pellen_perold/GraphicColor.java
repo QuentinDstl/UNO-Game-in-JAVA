@@ -89,6 +89,8 @@ public class GraphicColor extends JFrame
           setVisible(false);
           
           JOptionPane.showMessageDialog(null, "The color choosed is : " + source);
+          
+          setVisible(false);
       }
    }
 }
