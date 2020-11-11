@@ -51,8 +51,10 @@ public class DrawCard implements Card {
     public boolean canBePlayed(Game g, int play_turn) {
         boolean test = true;
         for(int i=0; i<g.getPlayers().get(play_turn).getDeck().size(); ++i) {
-            if(g.getPlayers().get(play_turn).getDeck().get(i).canPlayOn(g.getTrash().get(g.getTrash().size()-1)) && g.getPlayers().get(play_turn).getDeck().get(i)!=this) {
-                test = false;
+            if(!(g.getPlayers().get(play_turn).getDeck().get(i) instanceof DrawCard || g.getPlayers().get(play_turn).getDeck().get(i) instanceof WildDrawCard)) {
+                if(g.getPlayers().get(play_turn).getDeck().get(i).canPlayOn(g.getTrash().get(g.getTrash().size()-1))) {
+                    test = false;
+                }
             }
         }   
         return test;

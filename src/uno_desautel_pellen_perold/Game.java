@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Random; 
 import java.util.Collections;
 import javax.swing.*; // Needed for Swing classes
-import java.awt.*;    // Needed for GridLayout class
-import java.awt.event.*;
 
 public class Game {
     
@@ -110,7 +108,7 @@ public class Game {
     public void initPlayers(int numberPlayers) {
         for(int i=0; i<numberPlayers; i++) {
             Player player = new Player();
-            
+           
             for(int j=0; j<Player.NUMBER_OF_CARD ;j++) {
                 player.pickCard(m_pick_cards.get(m_pick_cards.size()-1));
                 m_pick_cards.remove(m_pick_cards.size()-1);
@@ -167,7 +165,9 @@ public class Game {
                 player.removeCard(pos);
                 m_trash.add(card);
                 this.next();
-                player.sayUno();
+                if(player.getDeck().size()==1) {
+                    player.sayUno();
+                }
             }
             else {
                 JOptionPane.showMessageDialog(null, "You can't play Joker now because you can play other cards");
@@ -265,12 +265,6 @@ public class Game {
 
             win = displayTwo.startGamenterface(this,this.m_playTurn,win);
             
-            if(getPlayerDeck(m_playTurn).isEmpty())
-            {
-                /* Valeur de win pour victoire */
-                win = 100;
-            }
-            
             if (win == 20)
             {
                 m_playTurn = m_playTurn +1;
@@ -281,18 +275,24 @@ public class Game {
                 win = 0;
             }
             
+            if(getPlayerDeck(m_playTurn).isEmpty())
+            {
+                /* Valeur de win pour victoire */
+                win = 100;
+                JOptionPane.showMessageDialog(null, "Player " +(m_playTurn+1) +" WINS !!!");
+            }
+            
         }while((win == 0)||(win == 10));
         
-        /*ArrayList<Player> ranking = new ArrayList<>();
-        ranking = m_players;
-        for(int i=0; i<ranking.size(); ++i) {
-            for(int j=0; j<i; ++j) {
-                if(ranking.get(j).getDeckValue() < ranking.get(i).getDeckValue())
-                    Collections.swap(ranking, i, j);
+        for(int i=0; i<m_players.size(); ++i) {
+            m_players.get(i).calculateDeckValue();
+            if(m_players.get(i).getDeckValue() <= 1) {
+                JOptionPane.showMessageDialog(null, "Player " +(i+1) +" has " +m_players.get(i).getDeckValue() +" point.");
             }
-        }*/
-        
-        //Fenetre de victoire
+            else {
+                JOptionPane.showMessageDialog(null, "Player " +(i+1) +" has " +m_players.get(i).getDeckValue() +" points.");
+            }
+        }
     }
     
     public void WildCard() {
