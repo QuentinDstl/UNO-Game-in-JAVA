@@ -1,6 +1,7 @@
 package uno_desautel_pellen_perold;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Player {
 
@@ -41,7 +42,7 @@ public class Player {
     }
     
     public void sayUno() {
-        //mettre le code de la fenetre dire UNO
+        JOptionPane.showMessageDialog(null, "Say UNO");
     }
     
     public void calculateDeckValue(){

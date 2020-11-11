@@ -3,6 +3,7 @@ package uno_desautel_pellen_perold;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class Uno_desautel_pellen_perold {
     
@@ -14,30 +15,39 @@ public class Uno_desautel_pellen_perold {
     
     public static void playGame()
     {
-        /* initialisation of the  game */
-        
-        int numberPlayers  = playWelcome();
+        /* initialisation of the  game */         
+        int numberPlayers= playWelcome();
+            
         Game game = new Game(numberPlayers);
         
         game.startGame();
- 
     }
     
     public static int playWelcome()
     {
-        int numberPlayer=0;
+        int numberPlayers=0;
         GraphicWelcome displayOne = new GraphicWelcome();
-        
         
         do 
         {            
-            numberPlayer = displayOne.getNumberPlayer();
-            System.out.print("");
-        }while (numberPlayer ==0);
+            numberPlayers = displayOne.getNumberPlayer();
+            System.out.print("");  
+            
+        }while  (numberPlayers ==0);
         
-        // A DELETE PLUS TARD 
-        System.out.println(" Numbers players : "  +numberPlayer);
+        try 
+        {
+            if ((numberPlayers <=1) || (numberPlayers >= 9))
+            {
+                System.err.println("The number of players must be between 2 and 4");
+                throw  new IllegalArgumentException();
+            }
+        } 
+        catch (IllegalArgumentException e) 
+        {
+            System.exit(0);
+        }
         
-        return numberPlayer;
+        return numberPlayers;
     }
 }

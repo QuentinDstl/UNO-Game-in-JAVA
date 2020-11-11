@@ -55,79 +55,79 @@ public interface Card {
     public final static int NB_IMAGES_CARD = 42;
 
     /* NUMBER CARDS */
-    public final static ImageIcon RED_0_IMAGE = new ImageIcon("CartesUNO\\0R.jpg");
-    public final static ImageIcon BLUE_0_IMAGE = new ImageIcon("CartesUNO\\0B.jpg");
-    public final static ImageIcon GREEN_0_IMAGE = new ImageIcon("CartesUNO\\0G.jpg");
-    public final static ImageIcon YELLOW_0_IMAGE = new ImageIcon("CartesUNO\\0Y.jpg");
+    public final static ImageIcon RED_0_IMAGE = new ImageIcon("CartesUNO\\0R.png");
+    public final static ImageIcon BLUE_0_IMAGE = new ImageIcon("CartesUNO\\0B.png");
+    public final static ImageIcon GREEN_0_IMAGE = new ImageIcon("CartesUNO\\0G.png");
+    public final static ImageIcon YELLOW_0_IMAGE = new ImageIcon("CartesUNO\\0Y.png");
     
-    public final static ImageIcon RED_1_IMAGE = new ImageIcon("CartesUNO\\1R.jpg");
-    public final static ImageIcon BLUE_1_IMAGE = new ImageIcon("CartesUNO\\1B.jpg");
-    public final static ImageIcon GREEN_1_IMAGE = new ImageIcon("CartesUNO\\1G.jpg");
-    public final static ImageIcon YELLOW_1_IMAGE = new ImageIcon("CartesUNO\\1Y.jpg");
+    public final static ImageIcon RED_1_IMAGE = new ImageIcon("CartesUNO\\1R.png");
+    public final static ImageIcon BLUE_1_IMAGE = new ImageIcon("CartesUNO\\1B.png");
+    public final static ImageIcon GREEN_1_IMAGE = new ImageIcon("CartesUNO\\1G.png");
+    public final static ImageIcon YELLOW_1_IMAGE = new ImageIcon("CartesUNO\\1Y.png");
     
-    public final static ImageIcon RED_2_IMAGE = new ImageIcon("CartesUNO\\2R.jpg");
-    public final static ImageIcon BLUE_2_IMAGE = new ImageIcon("CartesUNO\\2B.jpg");
-    public final static ImageIcon GREEN_2_IMAGE = new ImageIcon("CartesUNO\\2G.jpg");
-    public final static ImageIcon YELLOW_2_IMAGE = new ImageIcon("CartesUNO\\2Y.jpg");
+    public final static ImageIcon RED_2_IMAGE = new ImageIcon("CartesUNO\\2R.png");
+    public final static ImageIcon BLUE_2_IMAGE = new ImageIcon("CartesUNO\\2B.png");
+    public final static ImageIcon GREEN_2_IMAGE = new ImageIcon("CartesUNO\\2G.png");
+    public final static ImageIcon YELLOW_2_IMAGE = new ImageIcon("CartesUNO\\2Y.png");
     
-    public final static ImageIcon RED_3_IMAGE = new ImageIcon("CartesUNO\\3R.jpg");
-    public final static ImageIcon BLUE_3_IMAGE = new ImageIcon("CartesUNO\\3B.jpg");
-    public final static ImageIcon GREEN_3_IMAGE = new ImageIcon("CartesUNO\\3G.jpg");
-    public final static ImageIcon YELLOW_3_IMAGE = new ImageIcon("CartesUNO\\3Y.jpg");
+    public final static ImageIcon RED_3_IMAGE = new ImageIcon("CartesUNO\\3R.png");
+    public final static ImageIcon BLUE_3_IMAGE = new ImageIcon("CartesUNO\\3B.png");
+    public final static ImageIcon GREEN_3_IMAGE = new ImageIcon("CartesUNO\\3G.png");
+    public final static ImageIcon YELLOW_3_IMAGE = new ImageIcon("CartesUNO\\3Y.png");
     
-    public final static ImageIcon RED_4_IMAGE = new ImageIcon("CartesUNO\\4R.jpg");
-    public final static ImageIcon BLUE_4_IMAGE = new ImageIcon("CartesUNO\\4B.jpg");
-    public final static ImageIcon GREEN_4_IMAGE = new ImageIcon("CartesUNO\\4G.jpg");
-    public final static ImageIcon YELLOW_4_IMAGE = new ImageIcon("CartesUNO\\4Y.jpg");
+    public final static ImageIcon RED_4_IMAGE = new ImageIcon("CartesUNO\\4R.png");
+    public final static ImageIcon BLUE_4_IMAGE = new ImageIcon("CartesUNO\\4B.png");
+    public final static ImageIcon GREEN_4_IMAGE = new ImageIcon("CartesUNO\\4G.png");
+    public final static ImageIcon YELLOW_4_IMAGE = new ImageIcon("CartesUNO\\4Y.png");
     
-    public final static ImageIcon RED_5_IMAGE = new ImageIcon("CartesUNO\\5R.jpg");
-    public final static ImageIcon BLUE_5_IMAGE = new ImageIcon("CartesUNO\\5B.jpg");
-    public final static ImageIcon GREEN_5_IMAGE = new ImageIcon("CartesUNO\\5G.jpg");
-    public final static ImageIcon YELLOW_5_IMAGE = new ImageIcon("CartesUNO\\5Y.jpg");
+    public final static ImageIcon RED_5_IMAGE = new ImageIcon("CartesUNO\\5R.png");
+    public final static ImageIcon BLUE_5_IMAGE = new ImageIcon("CartesUNO\\5B.png");
+    public final static ImageIcon GREEN_5_IMAGE = new ImageIcon("CartesUNO\\5G.png");
+    public final static ImageIcon YELLOW_5_IMAGE = new ImageIcon("CartesUNO\\5Y.png");
     
-    public final static ImageIcon RED_6_IMAGE = new ImageIcon("CartesUNO\\6R.jpg");
-    public final static ImageIcon BLUE_6_IMAGE = new ImageIcon("CartesUNO\\6B.jpg");
-    public final static ImageIcon GREEN_6__IMAGE = new ImageIcon("CartesUNO\\6G.jpg");
-    public final static ImageIcon YELLOW_6_IMAGE = new ImageIcon("CartesUNO\\6Y.jpg");
+    public final static ImageIcon RED_6_IMAGE = new ImageIcon("CartesUNO\\6R.png");
+    public final static ImageIcon BLUE_6_IMAGE = new ImageIcon("CartesUNO\\6B.png");
+    public final static ImageIcon GREEN_6__IMAGE = new ImageIcon("CartesUNO\\6G.png");
+    public final static ImageIcon YELLOW_6_IMAGE = new ImageIcon("CartesUNO\\6Y.png");
     
-    public final static ImageIcon RED_7_IMAGE = new ImageIcon("CartesUNO\\7R.jpg");
-    public final static ImageIcon BLUE_7_IMAGE = new ImageIcon("CartesUNO\\7B.jpg");
-    public final static ImageIcon GREEN_7_IMAGE = new ImageIcon("CartesUNO\\7G.jpg");
-    public final static ImageIcon YELLOW_7_IMAGE = new ImageIcon("CartesUNO\\7Y.jpg");
+    public final static ImageIcon RED_7_IMAGE = new ImageIcon("CartesUNO\\7R.png");
+    public final static ImageIcon BLUE_7_IMAGE = new ImageIcon("CartesUNO\\7B.png");
+    public final static ImageIcon GREEN_7_IMAGE = new ImageIcon("CartesUNO\\7G.png");
+    public final static ImageIcon YELLOW_7_IMAGE = new ImageIcon("CartesUNO\\7Y.png");
     
-    public final static ImageIcon RED_8_IMAGE = new ImageIcon("CartesUNO\\8R.jpg");
-    public final static ImageIcon BLUE_8_IMAGE = new ImageIcon("CartesUNO\\8B.jpg");
-    public final static ImageIcon GREEN_8_IMAGE = new ImageIcon("CartesUNO\\8G.jpg");
-    public final static ImageIcon YELLOW_8_IMAGE = new ImageIcon("CartesUNO\\8Y.jpg");
+    public final static ImageIcon RED_8_IMAGE = new ImageIcon("CartesUNO\\8R.png");
+    public final static ImageIcon BLUE_8_IMAGE = new ImageIcon("CartesUNO\\8B.png");
+    public final static ImageIcon GREEN_8_IMAGE = new ImageIcon("CartesUNO\\8G.png");
+    public final static ImageIcon YELLOW_8_IMAGE = new ImageIcon("CartesUNO\\8Y.png");
     
-    public final static ImageIcon RED_9_IMAGE = new ImageIcon("CartesUNO\\9R.jpg");
-    public final static ImageIcon BLUE_9_IMAGE = new ImageIcon("CartesUNO\\9B.jpg");
-    public final static ImageIcon GREEN_9_IMAGE = new ImageIcon("CartesUNO\\9G.jpg");
-    public final static ImageIcon YELLOW_9_IMAGE = new ImageIcon("CartesUNO\\9Y.jpg");
+    public final static ImageIcon RED_9_IMAGE = new ImageIcon("CartesUNO\\9R.png");
+    public final static ImageIcon BLUE_9_IMAGE = new ImageIcon("CartesUNO\\9B.png");
+    public final static ImageIcon GREEN_9_IMAGE = new ImageIcon("CartesUNO\\9G.png");
+    public final static ImageIcon YELLOW_9_IMAGE = new ImageIcon("CartesUNO\\9Y.png");
     
     /* REVERSE CARDS */
-    public final static ImageIcon RED_REVERSE_IMAGE = new ImageIcon("CartesUNO\\reverseR.jpg");
-    public final static ImageIcon BLUE_REVERSE_IMAGE = new ImageIcon("CartesUNO\\reverseB.jpg");
-    public final static ImageIcon GREEN_REVERSE_IMAGE = new ImageIcon("CartesUNO\\reverseG.jpg");
-    public final static ImageIcon YELLOW_REVERSE_IMAGE = new ImageIcon("CartesUNO\\reverseY.jpg");
+    public final static ImageIcon RED_REVERSE_IMAGE = new ImageIcon("CartesUNO\\reverseR.png");
+    public final static ImageIcon BLUE_REVERSE_IMAGE = new ImageIcon("CartesUNO\\reverseB.png");
+    public final static ImageIcon GREEN_REVERSE_IMAGE = new ImageIcon("CartesUNO\\reverseG.png");
+    public final static ImageIcon YELLOW_REVERSE_IMAGE = new ImageIcon("CartesUNO\\reverseY.png");
 
     /* SKIP CARDS */
-    public final static ImageIcon RED_SKIP_IMAGE = new ImageIcon("CartesUNO\\skipR.jpg");
-    public final static ImageIcon BLUE_SKIP_IMAGE = new ImageIcon("CartesUNO\\skipB.jpg");
-    public final static ImageIcon GREEN_SKIP_IMAGE = new ImageIcon("CartesUNO\\skipG.jpg");
-    public final static ImageIcon YELLOW_SKIP_IMAGE = new ImageIcon("CartesUNO\\skipY.jpg");
+    public final static ImageIcon RED_SKIP_IMAGE = new ImageIcon("CartesUNO\\skipR.png");
+    public final static ImageIcon BLUE_SKIP_IMAGE = new ImageIcon("CartesUNO\\skipB.png");
+    public final static ImageIcon GREEN_SKIP_IMAGE = new ImageIcon("CartesUNO\\skipG.png");
+    public final static ImageIcon YELLOW_SKIP_IMAGE = new ImageIcon("CartesUNO\\skipY.png");
     
     /* WILD CARDS */
-    public final static ImageIcon RED_WILD_IMAGE = new ImageIcon("CartesUNO\\wildR.jpg");
-    public final static ImageIcon BLUE_WILD_IMAGE = new ImageIcon("CartesUNO\\wildB.jpg");
-    public final static ImageIcon GREEN_WILD_IMAGE = new ImageIcon("CartesUNO\\wildG.jpg");
-    public final static ImageIcon YELLOW_WILD_IMAGE = new ImageIcon("CartesUNO\\wildY.jpg");
+    public final static ImageIcon RED_WILD_IMAGE = new ImageIcon("CartesUNO\\wildR.png");
+    public final static ImageIcon BLUE_WILD_IMAGE = new ImageIcon("CartesUNO\\wildB.png");
+    public final static ImageIcon GREEN_WILD_IMAGE = new ImageIcon("CartesUNO\\wildG.png");
+    public final static ImageIcon YELLOW_WILD_IMAGE = new ImageIcon("CartesUNO\\wildY.png");
     
     /* DRAW CARD */
-    public final static ImageIcon DRAW_IMAGE = new ImageIcon("CartesUNO\\draw.jpg");
+    public final static ImageIcon DRAW_IMAGE = new ImageIcon("CartesUNO\\draw.png");
     
     /* WILD DRAW CARD */
-    public final static ImageIcon WILD_DRAW_IMAGE = new ImageIcon("CartesUNO\\wilddraw.jpg");
+    public final static ImageIcon WILD_DRAW_IMAGE = new ImageIcon("CartesUNO\\wilddraw.png");
     
 
     
