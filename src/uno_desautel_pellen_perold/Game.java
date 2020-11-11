@@ -284,7 +284,7 @@ public class Game {
             {
                 /* Valeur de win pour victoire */
                 win = 100;
-                JOptionPane.showMessageDialog(null, "Player " +(m_playTurn+1) +" WINS !!!");
+                JOptionPane.showMessageDialog(null, "Well done ! you the unique winner during this turn : Player " +(m_playTurn+1) +" WINS !!!");
             }
             
         }while((win == 0)||(win == 10));
