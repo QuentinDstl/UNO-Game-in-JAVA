@@ -50,6 +50,11 @@ public class SkipCard implements Card {
         else 
             return  card.getSymbol() == SKIP_CARD;
     }
+    
+    @Override
+    public boolean canBePlayed(Game g, int play_turn) {
+        return true;
+    }
 
     @Override
     public void play(Game g) {

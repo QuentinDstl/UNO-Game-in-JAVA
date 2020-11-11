@@ -50,6 +50,11 @@ public class WildCard implements Card {
         else 
             return  card.getSymbol() == WILD_CARD;
     }
+    
+    @Override
+    public boolean canBePlayed(Game g, int play_turn) {
+        return true;
+    }
 
     @Override
     public void play(Game g) {

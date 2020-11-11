@@ -60,6 +60,11 @@ public class NumberCard implements Card {
         else 
             return this.m_number == card.getSymbol();                   // if statement redondant : si this.m_number == card.getSymbol() alors return true sinon false
     }
+    
+    @Override
+    public boolean canBePlayed(Game g, int play_turn) {
+        return true;
+    }
 
     /**
      * jouer la carte en question

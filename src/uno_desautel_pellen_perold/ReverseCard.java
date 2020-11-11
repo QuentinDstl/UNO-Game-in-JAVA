@@ -50,6 +50,11 @@ public class ReverseCard implements Card {
         else 
             return  card.getSymbol() == REVERSE_CARD;                   // if statement redondant : si REVERSE_CARD == card.getSymbol() alors return true sinon false
     }
+    
+    @Override
+    public boolean canBePlayed(Game g, int play_turn) {
+        return true;
+    }
 
     @Override
     public void play(Game g) {

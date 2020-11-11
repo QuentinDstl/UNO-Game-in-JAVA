@@ -47,6 +47,17 @@ public class WildDrawCard implements Card {
     public boolean canPlayOn(Card card) {
         return true;
     }
+    
+    @Override
+    public boolean canBePlayed(Game g, int play_turn) {
+        boolean test = true;
+        for(int i=0; i<g.getPlayers().get(play_turn).getDeck().size(); ++i) {
+            if(g.getPlayers().get(play_turn).getDeck().get(i).canPlayOn(g.getTrash().get(g.getTrash().size()-1)) && g.getPlayers().get(play_turn).getDeck().get(i)!=this) {
+                test = false;
+            }
+        }   
+        return test;
+    }
 
     @Override
     public void play(Game g) {

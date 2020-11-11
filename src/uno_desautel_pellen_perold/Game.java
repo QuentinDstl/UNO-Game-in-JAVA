@@ -162,11 +162,16 @@ public class Game {
         
         if(card.canPlayOn(m_trash.get(m_trash.size()-1)))
         {
-            card.play(this);
-            player.removeCard(pos);
-            m_trash.add(card);
-            this.next();
-            player.sayUno();
+            if(card.canBePlayed(this, m_playTurn)) {    
+                card.play(this);
+                player.removeCard(pos);
+                m_trash.add(card);
+                this.next();
+                player.sayUno();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "You can't play Joker now because you can play other cards");
+            }
         }
         else {
             JOptionPane.showMessageDialog(null, "You can't play this card");

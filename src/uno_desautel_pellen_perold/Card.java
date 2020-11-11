@@ -138,9 +138,11 @@ public interface Card {
 
     public int getSymbol();                // get the symbol
     
-    public int getValue();
+    public int getValue();                 //get the value of the card for the final ranking
 
     public boolean canPlayOn(Card card);    // test if it can be played
+    
+    public boolean canBePlayed(Game g, int play_turn);   //test if it can be played
 
     public void play(Game g);               // implement any effects 
 
