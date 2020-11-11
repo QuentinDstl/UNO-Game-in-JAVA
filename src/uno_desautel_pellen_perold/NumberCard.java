@@ -22,7 +22,7 @@ public class NumberCard implements Card {
         ImageIcon image_card = null;
         String file_name = "CarteUNO\\";
         file_name = file_name + "\\";
-        file_name = file_name + number + color + ".jpg";
+        file_name = file_name + number + color + ".png";
         image_card = new ImageIcon(file_name);
         return image_card;
     }

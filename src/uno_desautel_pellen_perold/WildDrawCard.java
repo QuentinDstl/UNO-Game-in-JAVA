@@ -18,7 +18,7 @@ public class WildDrawCard implements Card {
         ImageIcon image_card = null;
         String file_name = "CarteUNO\\";
         file_name = file_name + "\\";
-        file_name = file_name + "wilddraw.jpg";
+        file_name = file_name + "wilddraw.png";
         image_card = new ImageIcon(file_name);
         return image_card;
     }
