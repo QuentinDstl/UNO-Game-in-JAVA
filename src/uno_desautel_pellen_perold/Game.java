@@ -269,7 +269,7 @@ public class Game {
             m_addedCards = 0;                                                            // on remet le compteur à 0
 
             win = displayTwo.startGamenterface(this,this.m_playTurn,win);
-            
+ 
             if (win == 20)
             {
                 this.next();
@@ -298,6 +298,7 @@ public class Game {
                 JOptionPane.showMessageDialog(null, "Player " +(i+1) +" has " +m_players.get(i).getDeckValue() +" points.");
             }
         }
+        System.exit(0);
     }
     
     public void WildCard() {
