@@ -62,5 +62,6 @@ public class WildCard implements Card {
         for(int i=0; i<2; i++) {
             g.WildCard();
         }
+        g.next();
     }
 }

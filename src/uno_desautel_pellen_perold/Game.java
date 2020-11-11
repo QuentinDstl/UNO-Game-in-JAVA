@@ -119,8 +119,13 @@ public class Game {
     
     private void initTrash()
     {
+        while(m_pick_cards.get(m_pick_cards.size()-1).getSymbol() == -2 || m_pick_cards.get(m_pick_cards.size()-1).getSymbol() == -5) {    
+            Collections.swap(m_pick_cards, m_pick_cards.size()-1, 1);
+        }
+
         m_trash.add(m_pick_cards.get(m_pick_cards.size()-1));
         m_pick_cards.remove(m_pick_cards.size()-1);
+        m_trash.get(m_trash.size()-1).play(this);
     }
 
     public void next() {
